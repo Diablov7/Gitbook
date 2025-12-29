@@ -555,13 +555,7 @@ body::after {
 }
 
 /* Listas numeradas têm estilo especial de timeline (definido abaixo) */
-.markdown-section ol:not(.no-timeline) {
-  padding-left: 0;
-  font-family: var(--font-family-main) !important;
-  margin: 0 !important;
-  margin-bottom: 0.3em !important;
-  margin-top: 0.2em !important;
-}
+/* Removido - regra conflitante substituída pelas regras abaixo */
 
 .markdown-section li {
   margin: 0.2em 0;
