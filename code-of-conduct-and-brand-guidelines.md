@@ -5,7 +5,7 @@ description: >-
   operate with integrity, responsibility, and alignment with Cellframe's values.
 ---
 
-# 🫡 Code of Conduct and Brand Guidelines
+# Code of Conduct and Brand Guidelines
 
 ## General Guidelines
 

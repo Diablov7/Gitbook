@@ -1,4 +1,4 @@
-# 💰 Performance Scoring and Compensation
+# Performance Scoring and Compensation
 
 <figure><img src=".gitbook/assets/Design sem nome (3).png" alt=""><figcaption></figcaption></figure>
 
