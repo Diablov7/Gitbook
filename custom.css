@@ -76,7 +76,13 @@ article,
 }
 
 /* FORÇAR remoção de qualquer fundo roxo/purple em TODOS os elementos */
-* {
+/* NOTA: Não usar * diretamente pois conflita com font-family */
+html *,
+body *,
+#app *,
+section *,
+.section *,
+.content * {
   background-image: none !important;
 }
 
@@ -130,15 +136,47 @@ body {
 body > * {
   background: transparent !important;
   background-color: transparent !important;
+  background-image: none !important;
 }
 
-/* Remover overlays */
+/* Remover QUALQUER fundo roxo/purple de elementos filhos */
+body > *::before,
+body > *::after {
+  background-image: none !important;
+  background: transparent !important;
+}
+
+/* Especificamente remover fundos roxos de section.content */
+section.content,
+.section.content {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+section.content::before,
+section.content::after,
+.section.content::before,
+.section.content::after {
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+  content: none !important;
+}
+
+/* Remover overlays - SEM FUNDOS ROXOS */
 body::before {
-  display: none;
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
 }
 
 body::after {
-  display: none;
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
 }
 
 /* Sidebar com estilo Cellframe */
