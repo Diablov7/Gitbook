@@ -89,6 +89,7 @@ body::before {
 
 /* Título principal da sidebar em negrito */
 .sidebar h1,
+.sidebar h1 a,
 .sidebar .app-name,
 .sidebar .app-name-link,
 .sidebar .app-name-link a {
@@ -96,6 +97,11 @@ body::before {
   font-family: 'Montserrat', sans-serif !important;
   color: var(--heading-color) !important;
   font-size: 1.1em !important;
+}
+
+/* Garantir que todos os links da sidebar estejam em negrito */
+.sidebar a {
+  font-weight: 600 !important;
 }
 
 /* Estilizar ícones na sidebar - espaçamento adequado */
