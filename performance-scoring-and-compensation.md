@@ -354,3 +354,5 @@ Their performance is still included in the category's average performance calcul
 ## Final Note
 
 This model is intentionally strict.
+
+It rewards consistency, quality, and real impact. Spam, shortcuts, and artificial engagement do not survive this system.

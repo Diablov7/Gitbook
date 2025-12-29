@@ -691,6 +691,7 @@ input[type="search"]:focus {
   bottom: 0;
   width: 2px;
   background: var(--color-tertiary);
+  opacity: 0.5;
   z-index: 0;
 }
 
@@ -701,6 +702,7 @@ input[type="search"]:focus {
   padding-bottom: 2em;
   margin: 0;
   list-style: none;
+  min-height: 40px;
 }
 
 .markdown-section ol li::before {
@@ -716,12 +718,12 @@ input[type="search"]:focus {
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  font-size: 1em;
+  font-size: 0.95em;
   border-radius: 50%;
   border: 2px solid var(--color-tertiary-transparent);
   z-index: 1;
   font-family: var(--font-family-main);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .markdown-section ol li:last-child {
@@ -733,23 +735,25 @@ input[type="search"]:focus {
 }
 
 /* Títulos em negrito dentro das listas numeradas */
-.markdown-section ol li > strong:first-child,
-.markdown-section ol li > b:first-child {
+.markdown-section ol li strong:first-child,
+.markdown-section ol li b:first-child {
   display: block;
   font-weight: 600;
-  font-size: 1.1em;
+  font-size: 1.05em;
   margin-bottom: 0.5em;
   color: var(--color-font-main);
   font-family: var(--font-family-secondary);
 }
 
 /* Texto descritivo nas listas numeradas */
-.markdown-section ol li > p,
-.markdown-section ol li:not(:has(> p)) {
+.markdown-section ol li {
   color: var(--color-font-secondary);
   line-height: 1.7;
-  margin: 0;
-  margin-top: 0.5em;
+}
+
+.markdown-section ol li p {
+  margin: 0.5em 0 0 0;
+  color: var(--color-font-secondary);
 }
 
 /* Steppers com glassmorphism (mantido para compatibilidade) */
