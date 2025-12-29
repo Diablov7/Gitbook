@@ -341,112 +341,57 @@ h6,
   overflow: auto;
 }
 
-/* Paginação Docsify - Botões Anterior/Próximo no footer */
-.pagination {
-  margin-top: 3rem !important;
-  padding-top: 1.5rem !important;
+/* Footer “Go to next section”: borda nos 4 lados */
+.next-section-footer {
+  margin-top: 2.5rem !important;
+  padding-top: 1.25rem !important;
   border-top: 1px solid var(--border) !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  gap: 1rem !important;
-  flex-wrap: wrap !important;
 }
 
-.pagination-item {
-  flex: 1 1 48% !important;
-  min-width: 200px !important;
-  max-width: 48% !important;
-  width: 48% !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
+.next-section-content {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background: transparent !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  transform: none !important;
 }
 
-.pagination-item--prev,
-.pagination-item--next {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  height: 100% !important;
-  width: 100% !important;
-  text-align: center !important;
+/* Logo “estratégico” no footer */
+.next-section-content::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  background-image: url('assets/images/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.9;
 }
 
-.pagination-item--prev {
-  text-align: center !important;
-}
-
-.pagination-item--next {
-  text-align: center !important;
-}
-
-.pagination-item-label {
-  display: block !important;
-  font-size: 0.75rem !important;
-  color: var(--muted) !important;
-  margin-bottom: 0.4rem !important;
-  font-weight: 500 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.5px !important;
-  text-align: center !important;
-}
-
-.pagination-item-title {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0.85rem 1.15rem !important;
+.next-section-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
   background: var(--panel) !important;
   color: var(--text) !important;
   border: 1px solid var(--border) !important;
-  border-radius: 0 !important;
-  text-decoration: none !important;
-  font-weight: 600 !important;
-  font-size: 0.95rem !important;
-  transition: background-color 0.2s ease, border-color 0.2s ease !important;
-  box-shadow: none !important;
-  line-height: 1.4 !important;
-  min-height: 70px !important;
-  height: 100% !important;
+  border-style: solid !important;
+  border-width: 1px !important;
   box-sizing: border-box !important;
-  flex: 1 !important;
-  text-align: center !important;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
-.pagination-item-title:hover {
-  background: var(--panel-2) !important;
-  border-color: var(--border) !important;
-  color: var(--text) !important;
-  text-decoration: none !important;
-}
-
-.pagination-item-title:active {
-  background: var(--panel) !important;
-}
-
-/* Quando só tem um botão (primeira ou última página) */
-.pagination-item--prev:only-child,
-.pagination-item--next:only-child {
-  max-width: 100% !important;
-  width: 100% !important;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .pagination {
-    flex-direction: column !important;
-  }
-
-  .pagination-item {
-    max-width: 100% !important;
-    width: 100% !important;
-  }
-
-  .pagination-item--prev,
-  .pagination-item--next {
-    text-align: center !important;
-  }
+.next-section-button:hover,
+.next-section-content:hover {
+  transform: none !important;
 }
 
 @media (max-width: 768px) {
@@ -457,222 +402,6 @@ h6,
   .next-section-button {
     width: 100%;
   }
-}
-
-/* Caixas de categoria para regras de pontuação */
-.category-box {
-  background: var(--panel) !important;
-  border: 1px solid var(--border) !important;
-  border-top: 1px solid var(--border) !important;
-  border-right: 1px solid var(--border) !important;
-  border-bottom: 1px solid var(--border) !important;
-  border-left: 1px solid var(--border) !important;
-  padding: 1.25rem 1.5rem !important;
-  margin: 1rem 0 !important;
-  border-radius: 0 !important;
-  text-align: center !important;
-}
-
-.category-box h3 {
-  margin-top: 0 !important;
-  margin-bottom: 0.75rem !important;
-  font-size: 1.3rem !important;
-  color: var(--text) !important;
-  border-bottom: 1px solid var(--border) !important;
-  padding-bottom: 0.5rem !important;
-  text-align: center !important;
-}
-
-.category-box h4 {
-  margin-top: 0 !important;
-  margin-bottom: 0.5rem !important;
-  font-size: 1.1rem !important;
-  color: var(--text) !important;
-  text-align: center !important;
-}
-
-.category-box p {
-  margin: 0.5rem 0 !important;
-  color: var(--muted) !important;
-  text-align: center !important;
-}
-
-.category-box ul,
-.category-box ol {
-  margin: 0.75rem auto !important;
-  padding-left: 0 !important;
-  list-style-position: inside !important;
-  text-align: center !important;
-  display: inline-block !important;
-  text-align: left !important;
-}
-
-.category-box li {
-  margin: 0.4rem 0 !important;
-  color: var(--text) !important;
-}
-
-.category-box strong {
-  color: var(--text) !important;
-  font-weight: 600 !important;
-}
-
-.category-box code {
-  background: var(--panel-2) !important;
-  border: 1px solid var(--border) !important;
-  padding: 0.15rem 0.4rem !important;
-  font-size: 0.9em !important;
-}
-
-/* Header da categoria com pontos máximos (fora das caixas) */
-.category-header {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  flex-direction: column !important;
-  margin-bottom: 1.5rem !important;
-  padding: 1rem 1.5rem !important;
-  background: var(--panel) !important;
-  border: 1px solid var(--border) !important;
-  border-top: 1px solid var(--border) !important;
-  border-right: 1px solid var(--border) !important;
-  border-bottom: 1px solid var(--border) !important;
-  border-left: 1px solid var(--border) !important;
-  text-align: center !important;
-  gap: 0.5rem !important;
-}
-
-.category-header h3 {
-  margin: 0 !important;
-  border: none !important;
-  padding: 0 !important;
-  text-align: center !important;
-}
-
-.category-meta {
-  font-size: 0.85rem !important;
-  color: var(--muted) !important;
-  font-weight: 500 !important;
-  text-align: center !important;
-}
-
-/* Caixa individual para cada atividade */
-.activity-box {
-  background: var(--panel) !important;
-  border: 1px solid var(--border) !important;
-  border-top: 1px solid var(--border) !important;
-  border-right: 1px solid var(--border) !important;
-  border-bottom: 1px solid var(--border) !important;
-  border-left: 1px solid var(--border) !important;
-  padding: 1.25rem 1.5rem !important;
-  margin: 1rem 0 !important;
-  border-radius: 0 !important;
-  text-align: center !important;
-}
-
-.activity-box h4 {
-  margin-top: 0 !important;
-  margin-bottom: 0.75rem !important;
-  font-size: 1.1rem !important;
-  color: var(--text) !important;
-  text-align: center !important;
-  border-bottom: 1px solid var(--border) !important;
-  padding-bottom: 0.5rem !important;
-}
-
-.activity-box p {
-  margin: 0.5rem 0 !important;
-  color: var(--muted) !important;
-  text-align: center !important;
-}
-
-.activity-box ul,
-.activity-box ol {
-  margin: 0.75rem auto !important;
-  padding-left: 0 !important;
-  list-style-position: inside !important;
-  text-align: center !important;
-  display: inline-block !important;
-  text-align: left !important;
-}
-
-.activity-box li {
-  margin: 0.4rem 0 !important;
-  color: var(--text) !important;
-}
-
-/* Seção de regras dentro da caixa de atividade */
-.activity-box .category-rules {
-  margin-top: 1rem !important;
-  padding-top: 1rem !important;
-  border-top: 1px solid var(--border) !important;
-  text-align: center !important;
-}
-
-.activity-box .category-rules ul {
-  margin: 0.75rem auto !important;
-  padding-left: 0 !important;
-  list-style-position: inside !important;
-  text-align: center !important;
-  display: inline-block !important;
-  text-align: left !important;
-}
-
-.category-rules-title {
-  font-weight: 600 !important;
-  color: var(--text) !important;
-  margin-bottom: 0.5rem !important;
-  font-size: 0.95rem !important;
-  text-align: center !important;
-}
-
-.category-rules ul {
-  margin: 0.75rem auto !important;
-  padding-left: 0 !important;
-  list-style-position: inside !important;
-  text-align: center !important;
-  display: inline-block !important;
-  text-align: left !important;
-}
-
-/* Pontuação destacada */
-.points-value {
-  color: var(--text) !important;
-  font-weight: 700 !important;
-  font-size: 1.05em !important;
-}
-
-/* Seção de threshold */
-.threshold-box {
-  background: var(--panel-2) !important;
-  border: 1px solid var(--border) !important;
-  border-top: 1px solid var(--border) !important;
-  border-right: 1px solid var(--border) !important;
-  border-bottom: 1px solid var(--border) !important;
-  border-left: 1px solid var(--border) !important;
-  padding: 1rem 1.25rem !important;
-  margin: 1.5rem 0 !important;
-  text-align: center !important;
-}
-
-.threshold-box strong {
-  color: var(--text) !important;
-  display: block !important;
-  margin-bottom: 0.5rem !important;
-  text-align: center !important;
-}
-
-.threshold-box ul {
-  margin: 0.75rem auto !important;
-  padding-left: 0 !important;
-  list-style-position: inside !important;
-  text-align: center !important;
-  display: inline-block !important;
-  text-align: left !important;
-}
-
-.threshold-box p {
-  text-align: center !important;
 }
 
 
