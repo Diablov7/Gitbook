@@ -79,22 +79,24 @@ body {
   background-position: 
     center,
     center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-repeat: 
     no-repeat,
     repeat;
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* Overlay escuro para melhorar legibilidade - Cellframe style */
 body::before {
   content: '';
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background: var(--color-main);
   opacity: 0.85;
   z-index: -1;
@@ -104,11 +106,11 @@ body::before {
 /* Elementos decorativos - Cellframe accent colors */
 body::after {
   content: '';
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background-image: 
     radial-gradient(circle at 10% 20%, var(--color-accent-main-rgba) 0%, transparent 30%),
     radial-gradient(circle at 90% 70%, rgba(179, 163, 255, 0.12) 0%, transparent 40%),
@@ -304,53 +306,37 @@ body:hover::after {
   text-indent: 0;
 }
 
-/* Conteúdo principal - Cellframe style */
+/* Conteúdo principal - texto diretamente no fundo */
 .markdown-section {
   color: var(--color-font-main) !important;
-  background: var(--color-secondary) !important;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  padding: 3em;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 1.5em 1em;
   border-radius: 0;
-  border: 1px solid var(--color-tertiary-transparent);
+  border: none !important;
   font-family: var(--font-family-main) !important;
   max-width: 900px;
   line-height: 1.8;
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.5),
-    0 0 0 1px var(--color-accent-main-rgba) inset,
-    0 0 60px rgba(179, 163, 255, 0.05);
-  margin: 2em auto;
+  box-shadow: none !important;
+  margin: 0 auto;
   position: relative;
-  overflow: hidden;
-  transition: var(--transition-all-main);
+  overflow: visible;
+  z-index: 1;
 }
 
 .markdown-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-accent-main-rgba), transparent);
-  opacity: 0.3;
-  transition: var(--transition-all-main);
+  display: none;
 }
 
 .markdown-section:hover {
-  box-shadow: 
-    0 12px 40px 0 rgba(0, 0, 0, 0.6),
-    0 0 0 1px var(--color-accent-main-rgba) inset,
-    0 0 100px rgba(179, 163, 255, 0.15);
-  transform: translateY(-2px);
-  border-color: var(--color-accent-main-rgba);
+  transform: none;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .markdown-section:hover::before {
-  opacity: 1;
-  height: 3px;
-  box-shadow: 0 0 20px var(--color-accent-main-rgba);
+  display: none;
 }
 
 /* Títulos - Cellframe Rubik font */
@@ -363,8 +349,8 @@ body:hover::after {
   color: var(--color-font-main) !important;
   font-family: var(--font-family-secondary) !important;
   font-weight: 600;
-  margin-top: 1.5em;
-  margin-bottom: 0.6em;
+  margin-top: 1.2em;
+  margin-bottom: 0.4em;
   line-height: 1.3;
 }
 
@@ -379,7 +365,7 @@ body:hover::after {
 .markdown-section h2 {
   font-size: 2em;
   font-weight: 700;
-  margin-top: 1.8em;
+  margin-top: 1.5em;
 }
 
 .markdown-section h3 {
@@ -412,9 +398,9 @@ body:hover::after {
 .markdown-section p {
   font-family: var(--font-family-main) !important;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
-  margin-bottom: 0.8em;
+  margin-bottom: 0.5em;
   color: var(--color-font-main);
 }
 
@@ -422,9 +408,9 @@ body:hover::after {
   margin-bottom: 0;
 }
 
-/* Espaçamento entre parágrafos consecutivos - reduzido */
+/* Espaçamento entre parágrafos consecutivos - muito reduzido */
 .markdown-section p + p {
-  margin-top: 0.8em;
+  margin-top: 0.5em;
 }
 
 /* Divisores */
@@ -675,12 +661,40 @@ input[type="search"]:focus {
 }
 
 /* Timeline/Stepper Style - Listas numeradas com círculos conectados */
-.markdown-section ol {
+.markdown-section ol:not(.no-timeline):not(:has(li h4)) {
   counter-reset: step-counter;
   list-style: none;
   padding-left: 0;
   margin: 1em 0;
   position: relative;
+}
+
+/* Listas numeradas simples (sem timeline) - para listas com H4 dentro */
+.markdown-section ol:has(li h4),
+.markdown-section ol.no-timeline {
+  list-style: decimal !important;
+  padding-left: 2em !important;
+  margin: 0.8em 0 !important;
+  position: relative;
+  counter-reset: none !important;
+}
+
+.markdown-section ol:has(li h4)::before {
+  display: none !important;
+}
+
+.markdown-section ol:has(li h4) li {
+  padding-left: 0 !important;
+  padding-bottom: 0.8em !important;
+  margin: 0 !important;
+  list-style: decimal !important;
+  min-height: auto !important;
+  position: relative !important;
+}
+
+.markdown-section ol:has(li h4) li::before {
+  display: none !important;
+  content: none !important;
 }
 
 .markdown-section ol::before {
@@ -819,17 +833,17 @@ a:focus {
 
 /* Espaçamento consistente entre seções - muito reduzido */
 .markdown-section > * + * {
-  margin-top: 0.6em;
+  margin-top: 0.4em;
 }
 
-/* Espaçamento após títulos - reduzido */
+/* Espaçamento após títulos - muito reduzido */
 .markdown-section > h1 + *,
 .markdown-section > h2 + *,
 .markdown-section > h3 + *,
 .markdown-section > h4 + *,
 .markdown-section > h5 + *,
 .markdown-section > h6 + * {
-  margin-top: 0.6em;
+  margin-top: 0.4em;
 }
 
 /* Espaçamento após parágrafos seguidos de outros elementos - reduzido */
@@ -839,24 +853,24 @@ a:focus {
 .markdown-section p + h4,
 .markdown-section p + h5,
 .markdown-section p + h6 {
-  margin-top: 1.2em;
+  margin-top: 1em;
 }
 
 /* Espaçamento após listas - muito reduzido */
 .markdown-section ul + p,
 .markdown-section ol + p {
-  margin-top: 0.4em;
+  margin-top: 0.3em;
 }
 
 .markdown-section p + ul,
 .markdown-section p + ol {
-  margin-top: 0.4em;
+  margin-top: 0.3em;
 }
 
 /* Espaçamento após blockquotes - reduzido */
 .markdown-section blockquote + p,
 .markdown-section p + blockquote {
-  margin-top: 0.8em;
+  margin-top: 0.5em;
 }
 
 /* Ajustar conteúdo - sem header superior */
@@ -873,7 +887,9 @@ body {
 .section.content,
 .markdown-section {
   margin-top: 0 !important;
-  padding-top: 0 !important;
+  padding-top: 1em !important;
+  position: relative;
+  z-index: 1;
 }
 
 /* Ajustar sidebar - sem header superior */
