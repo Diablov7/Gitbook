@@ -17,6 +17,9 @@
   --scrollbar-track: rgba(0, 0, 0, 0.3);
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
+  --purple-light: #b794f6;
+  --purple-light-rgba: rgba(183, 148, 246, 0.6);
+  --purple-light-bg: rgba(183, 148, 246, 0.1);
 }
 
 /* Importar Montserrat como fonte principal */
@@ -533,6 +536,22 @@ button {
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
+/* Sobrescrever qualquer cor laranja do Docsify */
+.docs-nav-tabs a,
+.nav-tab,
+.nav-tab.active,
+.nav-tab:hover,
+.nav-tab:focus {
+  color: var(--sidebar-text-color) !important;
+}
+
+.nav-tab.active,
+.nav-tab.active:hover,
+.nav-tab.active:focus {
+  color: var(--purple-light) !important;
+  border-bottom-color: var(--purple-light-rgba) !important;
+}
+
 .nav-tabs-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -560,16 +579,16 @@ button {
 }
 
 .nav-tab:hover {
-  color: var(--link-color);
-  background: var(--glass-bg);
+  color: var(--purple-light) !important;
+  background: var(--purple-light-bg);
   backdrop-filter: blur(10px);
 }
 
 .nav-tab.active {
-  color: var(--link-color);
-  border-bottom-color: rgba(255, 255, 255, 0.6);
+  color: var(--purple-light) !important;
+  border-bottom-color: var(--purple-light-rgba) !important;
   font-weight: 600;
-  background: var(--glass-bg);
+  background: var(--purple-light-bg);
   backdrop-filter: blur(10px);
 }
 
