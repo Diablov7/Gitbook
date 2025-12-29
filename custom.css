@@ -1,0 +1,26 @@
+:root {
+  --base-background-color: #0b0f14;
+  --sidebar-background: #0b0f14;
+  --sidebar-text-color: #cbd5e1;
+  --sidebar-border-color: #111827;
+  --text-color-base: #e5e7eb;
+  --heading-color: #f9fafb;
+  --link-color: #7dd3fc;
+}
+
+body {
+  background: #0b0f14 !important;
+}
+
+.sidebar {
+  background: #0b0f14 !important;
+  border-right: 1px solid #111827 !important;
+}
+
+.markdown-section {
+  color: #e5e7eb !important;
+}
+
+.markdown-section hr {
+  opacity: 0.15;
+}
