@@ -905,7 +905,7 @@ a:focus {
 
 /* Espaçamento consistente entre seções - MÍNIMO */
 .markdown-section > * + * {
-  margin-top: 0.15em;
+  margin-top: 0.1em !important;
 }
 
 /* Espaçamento após títulos - MÍNIMO */
@@ -915,7 +915,7 @@ a:focus {
 .markdown-section > h4 + *,
 .markdown-section > h5 + *,
 .markdown-section > h6 + * {
-  margin-top: 0.2em;
+  margin-top: 0.2em !important;
 }
 
 /* Espaçamento após parágrafos seguidos de títulos - MÍNIMO ABSOLUTO */
