@@ -860,28 +860,6 @@ body {
   padding-top: 0 !important;
 }
 
-#app {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  background: transparent !important;
-}
-
-/* Garantir que o conteúdo principal não fique escondido */
-.section.content {
-  background: transparent !important;
-  margin-top: 0 !important;
-  padding-top: 1em !important;
-  position: relative;
-  z-index: 1;
-}
-
-.markdown-section {
-  margin-top: 0 !important;
-  padding-top: 1em !important;
-  position: relative;
-  z-index: 1;
-}
-
 /* Ajustar sidebar - sem header superior */
 .sidebar {
   top: 0 !important;
