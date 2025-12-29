@@ -544,16 +544,18 @@ body::after {
 .markdown-section ul {
   padding-left: 2em;
   font-family: var(--font-family-main) !important;
-  margin: 0;
-  margin-bottom: 1.5em;
+  margin: 0 !important;
+  margin-bottom: 0.3em !important;
+  margin-top: 0.2em !important;
 }
 
 /* Listas numeradas têm estilo especial de timeline (definido abaixo) */
 .markdown-section ol:not(.no-timeline) {
   padding-left: 0;
   font-family: var(--font-family-main) !important;
-  margin: 0;
-  margin-bottom: 0.5em;
+  margin: 0 !important;
+  margin-bottom: 0.3em !important;
+  margin-top: 0.2em !important;
 }
 
 .markdown-section li {
