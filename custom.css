@@ -1247,3 +1247,93 @@ body {
     padding-top: 1.5em;
   }
 }
+
+/* ============================================
+   LISTAS NUMERADAS - REGRAS ULTRA AGRESSIVAS (FINAL DO ARQUIVO)
+   ============================================ */
+/* FORÇAR numeração decimal em TODAS as listas ol - PRIORIDADE MÁXIMA */
+ol,
+article ol,
+#main ol,
+.markdown-section ol,
+.markdown-section article ol,
+.markdown-section #main ol,
+section ol,
+.content ol,
+.app-body ol,
+.markdown-body ol,
+ol:not(.no-timeline),
+ol:not(:has(li h4)),
+ol:has(li h4),
+.markdown-section ol:not(.no-timeline),
+.markdown-section ol:not(:has(li h4)),
+.markdown-section ol:has(li h4) {
+  list-style: decimal !important;
+  list-style-type: decimal !important;
+  padding-left: 2em !important;
+  counter-reset: none !important;
+}
+
+/* FORÇAR numeração decimal em TODOS os li - PRIORIDADE MÁXIMA */
+ol li,
+article ol li,
+#main ol li,
+.markdown-section ol li,
+.markdown-section article ol li,
+.markdown-section #main ol li,
+section ol li,
+.content ol li,
+.app-body ol li,
+.markdown-body ol li,
+ol:not(.no-timeline) li,
+ol:not(:has(li h4)) li,
+ol:has(li h4) li,
+.markdown-section ol:not(.no-timeline) li,
+.markdown-section ol:not(:has(li h4)) li,
+.markdown-section ol:has(li h4) li {
+  list-style: decimal !important;
+  list-style-type: decimal !important;
+  display: list-item !important;
+  counter-increment: none !important;
+  padding-left: 0 !important;
+}
+
+/* REMOVER COMPLETAMENTE ::before e ::after - PRIORIDADE MÁXIMA */
+ol li::before,
+ol li::after,
+article ol li::before,
+article ol li::after,
+#main ol li::before,
+#main ol li::after,
+.markdown-section ol li::before,
+.markdown-section ol li::after,
+section ol li::before,
+section ol li::after,
+.content ol li::before,
+.content ol li::after {
+  display: none !important;
+  content: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+}
+
+ol::before,
+article ol::before,
+#main ol::before,
+.markdown-section ol::before,
+section ol::before,
+.content ol::before {
+  display: none !important;
+  content: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
