@@ -57,6 +57,14 @@ html {
   background-color: var(--color-main) !important;
 }
 
+/* Garantir que elementos do Docsify não tenham fundos extras */
+main,
+.app-body,
+.markdown-body,
+.docsify-pagination-container {
+  background: transparent !important;
+}
+
 /* Cellframe Typography */
 * {
   font-family: var(--font-family-main) !important;
