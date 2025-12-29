@@ -1,6 +1,8 @@
-# Overview
+<div style="text-align: center; margin: 2rem 0 3rem 0;">
+  <img src="assets/images/logo-header.png" alt="Cellframe" style="max-width: 280px; height: auto; display: inline-block;">
+</div>
 
-<figure><img src="assets/images/logo-header.png" alt="Cellframe Ambassador Program" style="max-width: 300px; margin: 2em auto; display: block;"><figcaption></figcaption></figure>
+# Overview
 
 <figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
