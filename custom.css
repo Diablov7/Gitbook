@@ -1127,19 +1127,16 @@ body {
   gap: 1em;
   flex-wrap: wrap;
   padding: 1.5em;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(10, 10, 10, 0.4) 100%);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   border-radius: 0;
   border: 1px solid var(--glass-border) !important;
   border-top: 1px solid var(--glass-border) !important;
   border-right: 1px solid var(--glass-border) !important;
   border-bottom: 1px solid var(--glass-border) !important;
   border-left: 1px solid var(--glass-border) !important;
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(183, 148, 246, 0.1) inset,
-    0 0 40px rgba(183, 148, 246, 0.05);
+  box-shadow: none !important;
   position: relative;
   overflow: visible;
   transform: none !important;
