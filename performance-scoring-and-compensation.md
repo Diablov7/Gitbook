@@ -60,99 +60,139 @@ Eligible ambassadors share the Effective Pool proportionally based on Weighted_P
 
 ## General Payment Rules
 
-To be eligible for payment in a given month, an ambassador must:
-
-- Reach the minimum points threshold for their category
-- Submit a valid monthly report within the reporting window
-- Deliver verifiable, non-spam, non-botted activity
-
-Eligibility grants access to the pool. It does not guarantee a fixed payout.
+<div class="threshold-box">
+  <strong>To be eligible for payment in a given month, an ambassador must:</strong>
+  <ul>
+    <li>Reach the minimum points threshold for their category</li>
+    <li>Submit a valid monthly report within the reporting window</li>
+    <li>Deliver verifiable, non-spam, non-botted activity</li>
+  </ul>
+  <p><em>Eligibility grants access to the pool. It does not guarantee a fixed payout.</em></p>
+</div>
 
 ## Monthly Pools
 
-- **Regional Ambassadors**: USD X pool
-- **Rising Ambassadors**: USD Y pool
-
-Core Ambassadors are compensated under individual agreements and do not participate in pooled distribution.
+<div class="category-box">
+  <h3>Pool Distribution</h3>
+  <ul>
+    <li><strong>Regional Ambassadors:</strong> USD X pool</li>
+    <li><strong>Rising Ambassadors:</strong> USD Y pool</li>
+  </ul>
+  <p><em>Core Ambassadors are compensated under individual agreements and do not participate in pooled distribution.</em></p>
+</div>
 
 ## Regional Ambassadors - Scoring Breakdown (Monthly)
 
-**Maximum**: 100 points  
-**Payment eligibility threshold**: 40 points
+<div class="category-header">
+  <h3>Regional Ambassadors</h3>
+  <div class="category-meta">
+    <strong>Maximum:</strong> <span class="points-value">100 points</span><br>
+    <strong>Payment threshold:</strong> <span class="points-value">40 points</span>
+  </div>
+</div>
 
-### Community Growth (Quality Based) - up to 30 points
+<div class="activity-box">
+  <h4>Community Growth (Quality Based) - up to 30 points</h4>
+  <ul>
+    <li>5 quality members verified on local telegram or discord: <span class="points-value">15 points</span></li>
+    <li>20 or more quality members verified on local telegram or discord (not cumulative): <span class="points-value">30 points</span></li>
+  </ul>
+  <div class="category-rules">
+    <div class="category-rules-title">Rules:</div>
+    <ul>
+      <li>Only real, non spam members count</li>
+      <li>Growth below 5 quality members scores zero points</li>
+    </ul>
+  </div>
+</div>
 
-- 5 quality members verified on local telegram or discord: **15 points**
-- 20 or more quality members verified on local telegram or discord (not cumulative): **30 points**
+<div class="activity-box">
+  <h4>Localized Content - up to 25 points (based on manual report)</h4>
+  <ul>
+    <li>7 quality contents (posts, articles, guides, translations): <span class="points-value">10 points</span></li>
+    <li>15 quality contents: <span class="points-value">25 points</span></li>
+  </ul>
+  <div class="category-rules">
+    <div class="category-rules-title">Rules:</div>
+    <ul>
+      <li>Content must be original and relevant</li>
+      <li>Hard cap applies regardless of volume</li>
+      <li>Points are capped and assigned manually</li>
+    </ul>
+  </div>
+</div>
 
-**Rules:**
+<div class="activity-box">
+  <h4>Community Activity & Support - up to 15 points</h4>
+  <p>Evaluated qualitatively based on:</p>
+  <ul>
+    <li>Presence and responsiveness</li>
+    <li>Engagement quality and quantity</li>
+    <li>Helpfulness to users</li>
+  </ul>
+  <p><em>Tracked automatically via Telegram Bot and measured monthly</em></p>
+</div>
 
-- Only real, non spam members count
-- Growth below 5 quality members scores zero points
+<div class="activity-box">
+  <h4>Raid Participation - up to 10 points</h4>
+  <ul>
+    <li>Active and consistent participation: <span class="points-value">10 points</span></li>
+  </ul>
+  <p><em>Tracked automatically via the official raid bot on telegram.</em></p>
+</div>
 
-### Localized Content - up to 25 points (based on manual report)
-
-- 7 quality contents (posts, articles, guides, translations): **10 points**
-- 15 quality contents: **25 points**
-
-**Rules:**
-
-- Content must be original and relevant
-- Hard cap applies regardless of volume
-- Points are capped and assigned manually
-
-### Community Activity & Support - up to 15 points
-
-Evaluated qualitatively based on:
-
-- Presence and responsiveness
-- Engagement quality and quantity
-- Helpfulness to users
-
-Tracked automatically via Telegram Bot and measured monthly
-
-### Raid Participation - up to 10 points
-
-- Active and consistent participation: **10 points**
-
-Tracked automatically via the official raid bot on telegram.
-
-### Events & Initiatives - up to 20 points
-
-- One approved online or offline event: **20 points**
-
-**Rules:**
-
-- Proof required (photos, recordings, agenda, attendance)
-- Maximum one event counted per month
+<div class="activity-box">
+  <h4>Events & Initiatives - up to 20 points</h4>
+  <ul>
+    <li>One approved online or offline event: <span class="points-value">20 points</span></li>
+  </ul>
+  <div class="category-rules">
+    <div class="category-rules-title">Rules:</div>
+    <ul>
+      <li>Proof required (photos, recordings, agenda, attendance)</li>
+      <li>Maximum one event counted per month</li>
+    </ul>
+  </div>
+</div>
 
 ## Rising Ambassadors - Scoring Breakdown
 
-**Maximum**: 100 points  
-**Payment eligibility threshold**: 40 points
+<div class="category-header">
+  <h3>Rising Ambassadors</h3>
+  <div class="category-meta">
+    <strong>Maximum:</strong> <span class="points-value">100 points</span><br>
+    <strong>Payment threshold:</strong> <span class="points-value">40 points</span>
+  </div>
+</div>
 
-### Leaderboard Position - up to 50 points
+<div class="activity-box">
+  <h4>Leaderboard Position - up to 50 points</h4>
+  <ul>
+    <li>Top 10 Rising Ambassadors: <span class="points-value">50 points</span></li>
+    <li>Positions 11 to 50: <span class="points-value">40 points</span></li>
+    <li>Positions 51 to 100: <span class="points-value">30 points</span></li>
+  </ul>
+  <p><em>Leaderboard resets monthly.</em></p>
+</div>
 
-- Top 10 Rising Ambassadors: **50 points**
-- Positions 11 to 50: **40 points**
-- Positions 51 to 100: **30 points**
+<div class="activity-box">
+  <h4>Mission Completion - up to 25 points</h4>
+  <ul>
+    <li>80% completion: <span class="points-value">18 points</span></li>
+    <li>100% completion: <span class="points-value">25 points</span></li>
+  </ul>
+  <p><em>Tracked via mission forms or bots.</em></p>
+</div>
 
-Leaderboard resets monthly.
-
-### Mission Completion - up to 25 points
-
-- 80% completion: **18 points**
-- 100% completion: **25 points**
-
-Tracked via mission forms or bots.
-
-### Consistency & Behavior in community chats - up to 25 points
-
-Qualitative evaluation based on:
-
-- Monthly activity
-- Reliability
-- Alignment with community standards
+<div class="activity-box">
+  <h4>Consistency & Behavior in community chats - up to 25 points</h4>
+  <p>Qualitative evaluation based on:</p>
+  <ul>
+    <li>Monthly activity</li>
+    <li>Reliability</li>
+    <li>Alignment with community standards</li>
+  </ul>
+</div>
 
 ## Effective Pool Model
 
