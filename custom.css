@@ -75,6 +75,30 @@ article,
   background-image: none !important;
 }
 
+/* FORÇAR remoção de qualquer fundo roxo/purple em TODOS os elementos */
+* {
+  background-image: none !important;
+}
+
+section.content,
+.section.content,
+.content {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+section.content::before,
+section.content::after,
+.section.content::before,
+.section.content::after,
+.content::before,
+.content::after {
+  display: none !important;
+  content: none !important;
+}
+
 /* Cellframe Typography */
 * {
   font-family: var(--font-family-main) !important;
