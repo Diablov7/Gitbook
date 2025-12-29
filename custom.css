@@ -497,12 +497,12 @@ body:hover::after {
   padding-left: 0;
   font-family: var(--font-family-main) !important;
   margin: 0;
-  margin-bottom: 0.8em;
+  margin-bottom: 0.5em;
 }
 
 .markdown-section li {
-  margin: 0.3em 0;
-  line-height: 1.7;
+  margin: 0.2em 0;
+  line-height: 1.6;
   font-family: var(--font-family-main) !important;
   color: var(--color-font-main);
 }
@@ -844,10 +844,13 @@ a:focus {
 
 /* Espaçamento após listas - muito reduzido */
 .markdown-section ul + p,
-.markdown-section ol + p,
+.markdown-section ol + p {
+  margin-top: 0.4em;
+}
+
 .markdown-section p + ul,
 .markdown-section p + ol {
-  margin-top: 0.6em;
+  margin-top: 0.4em;
 }
 
 /* Espaçamento após blockquotes - reduzido */
