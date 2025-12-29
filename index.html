@@ -27,12 +27,71 @@
   <link rel="stylesheet" href="custom.css">
 </head>
 <body>
+  <!-- Navigation Tabs Header -->
+  <nav class="docs-nav-tabs">
+    <div class="nav-tabs-container">
+      <a href="#/README" class="nav-tab" data-section="overview">Overview</a>
+      <a href="#/program-structure" class="nav-tab" data-section="structure">Program Structure</a>
+      <a href="#/performance-scoring-and-compensation" class="nav-tab" data-section="performance">Performance & Compensation</a>
+      <a href="#/code-of-conduct-and-brand-guidelines" class="nav-tab" data-section="conduct">Code of Conduct</a>
+    </div>
+  </nav>
+  
   <div id="app"></div>
   <script>
     window.$docsify = {
       name: 'Cellframe Ambassador Program',
       loadSidebar: true,
       subMaxLevel: 2
+    }
+    
+    // Atualizar tab ativa baseado na rota
+    function updateActiveTab() {
+      const hash = window.location.hash;
+      let currentPath = hash.replace('#/', '').replace('.md', '').replace('/', '');
+      
+      // Se estiver na raiz ou README
+      if (!currentPath || currentPath === '' || currentPath === 'README') {
+        currentPath = 'README';
+      }
+      
+      const tabs = document.querySelectorAll('.nav-tab');
+      
+      tabs.forEach(tab => {
+        const href = tab.getAttribute('href');
+        let tabPath = href.replace('#/', '').replace('.md', '').replace('/', '');
+        
+        // Normalizar paths
+        if (tabPath === 'README' || tabPath === '') {
+          tabPath = 'README';
+        }
+        
+        if (currentPath === tabPath || 
+            (currentPath === 'README' && tabPath === 'README') ||
+            (currentPath.includes(tabPath) && tabPath !== 'README')) {
+          tab.classList.add('active');
+        } else {
+          tab.classList.remove('active');
+        }
+      });
+    }
+    
+    // Atualizar ao carregar e ao mudar de rota
+    window.addEventListener('hashchange', function() {
+      setTimeout(updateActiveTab, 100);
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(updateActiveTab, 500);
+    });
+    
+    // Atualizar quando Docsify terminar de carregar
+    if (window.$docsify) {
+      window.$docsify.plugins = [].concat(window.$docsify.plugins || [], function(hook) {
+        hook.doneEach(function() {
+          setTimeout(updateActiveTab, 100);
+        });
+      });
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
