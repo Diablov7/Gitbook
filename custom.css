@@ -64,7 +64,7 @@ body::before {
   pointer-events: none;
 }
 
-/* Elementos decorativos flutuantes */
+/* Elementos decorativos - removido animação, apenas visual estático */
 body::after {
   content: '';
   position: fixed;
@@ -78,18 +78,13 @@ body::after {
     radial-gradient(circle at 50% 50%, rgba(183, 148, 246, 0.04) 0%, transparent 50%);
   z-index: -1;
   pointer-events: none;
-  animation: float 20s ease-in-out infinite;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-20px) scale(1.05);
-    opacity: 0.8;
-  }
+/* Efeito hover no body para ativar elementos decorativos */
+body:hover::after {
+  opacity: 1;
 }
 
 /* Sidebar com glassmorphism moderno e bordas elegantes */
@@ -119,8 +114,15 @@ body::after {
     var(--purple-light-rgba) 20%, 
     var(--purple-light-rgba) 80%, 
     transparent 100%);
-  opacity: 0.4;
-  box-shadow: 0 0 10px rgba(183, 148, 246, 0.3);
+  opacity: 0.2;
+  box-shadow: 0 0 5px rgba(183, 148, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+.sidebar:hover::before {
+  opacity: 0.6;
+  box-shadow: 0 0 15px rgba(183, 148, 246, 0.4);
+  width: 3px;
 }
 
 .sidebar::after {
@@ -221,15 +223,23 @@ body::after {
   right: 0;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--purple-light-rgba), transparent);
-  opacity: 0.5;
+  opacity: 0.3;
+  transition: all 0.3s ease;
 }
 
 .markdown-section:hover {
   box-shadow: 
     0 12px 40px 0 rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(183, 148, 246, 0.2) inset,
-    0 0 80px rgba(183, 148, 246, 0.1);
+    0 0 0 1px rgba(183, 148, 246, 0.3) inset,
+    0 0 100px rgba(183, 148, 246, 0.15);
   transform: translateY(-2px);
+  border-color: rgba(183, 148, 246, 0.2);
+}
+
+.markdown-section:hover::before {
+  opacity: 1;
+  height: 3px;
+  box-shadow: 0 0 20px rgba(183, 148, 246, 0.5);
 }
 
 /* Títulos com Montserrat */
@@ -698,8 +708,15 @@ button {
     var(--purple-light-rgba) 20%, 
     var(--purple-light-rgba) 80%, 
     transparent 100%);
-  opacity: 0.4;
-  box-shadow: 0 0 10px rgba(183, 148, 246, 0.3);
+  opacity: 0.2;
+  box-shadow: 0 0 5px rgba(183, 148, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+.docs-nav-tabs:hover::after {
+  opacity: 0.6;
+  box-shadow: 0 0 15px rgba(183, 148, 246, 0.4);
+  height: 3px;
 }
 
 /* Sobrescrever qualquer cor laranja do Docsify */
@@ -900,26 +917,25 @@ body {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(183, 148, 246, 0.1) 0%, transparent 70%);
-  animation: rotate 10s linear infinite;
+  background: radial-gradient(circle, rgba(183, 148, 246, 0) 0%, transparent 70%);
   pointer-events: none;
+  transition: all 0.5s ease;
+  opacity: 0;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.next-section-content:hover::before {
+  background: radial-gradient(circle, rgba(183, 148, 246, 0.15) 0%, transparent 70%);
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .next-section-content:hover {
   box-shadow: 
     0 12px 40px 0 rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(183, 148, 246, 0.2) inset,
-    0 0 60px rgba(183, 148, 246, 0.1);
+    0 0 0 1px rgba(183, 148, 246, 0.3) inset,
+    0 0 80px rgba(183, 148, 246, 0.2);
   transform: translateY(-2px);
+  border-color: rgba(183, 148, 246, 0.3);
 }
 
 .next-section-label {
