@@ -81,14 +81,21 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 600;
 }
 
-/* Body com apenas fundo cinza */
+/* Body com APENAS fundo cinza - ÚNICO FUNDO DO PROJETO */
 body {
   background: var(--color-main) !important;
+  background-color: var(--color-main) !important;
   background-image: none !important;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+/* FORÇAR que body seja o único elemento com background */
+body > * {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 /* Remover overlays */
@@ -280,10 +287,11 @@ body::after {
   text-indent: 0;
 }
 
-/* Conteúdo principal - texto diretamente no fundo */
+/* Conteúdo principal - texto diretamente no fundo cinza */
 .markdown-section {
   color: var(--color-font-main) !important;
   background: transparent !important;
+  background-color: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   padding: 1.5em 1em;

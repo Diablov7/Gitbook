@@ -3,26 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Cellframe Ambassador Program - A structured, performance-driven framework to support the global growth of the Cellframe ecosystem." />
-  <meta name="keywords" content="Cellframe, Ambassador, Program, Blockchain, Crypto" />
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Cellframe Ambassador Program" />
-  <meta property="og:description" content="A structured, performance-driven framework to support the global growth of the Cellframe ecosystem." />
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:title" content="Cellframe Ambassador Program" />
-  <meta property="twitter:description" content="A structured, performance-driven framework to support the global growth of the Cellframe ecosystem." />
-  
   <title>Cellframe Ambassador Program</title>
-  
-  <!-- Google Fonts - Cellframe Branding (Inter e Rubik) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rubik:wght@400;600;700&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css">
   <link rel="stylesheet" href="custom.css">
 </head>
@@ -34,83 +15,6 @@
       loadSidebar: true,
       subMaxLevel: 2
     }
-    
-    // Mapeamento de seções e suas próximas seções
-    const sectionNavigation = {
-      'README': {
-        name: 'Program Structure',
-        href: '#/program-structure'
-      },
-      'program-structure': {
-        name: 'Performance & Compensation',
-        href: '#/performance-scoring-and-compensation'
-      },
-      'performance-scoring-and-compensation': {
-        name: 'Code of Conduct',
-        href: '#/code-of-conduct-and-brand-guidelines'
-      },
-      'code-of-conduct-and-brand-guidelines': {
-        name: null, // Última seção
-        href: null
-      }
-    };
-    
-    // Função para adicionar footer com "Go to next section"
-    function addNextSectionFooter() {
-      const hash = window.location.hash;
-      let currentPath = hash.replace('#/', '').replace('.md', '').replace('/', '');
-      
-      // Se estiver na raiz ou README
-      if (!currentPath || currentPath === '' || currentPath === 'README') {
-        currentPath = 'README';
-      }
-      
-      // Remover footer existente se houver
-      const existingFooter = document.querySelector('.next-section-footer');
-      if (existingFooter) {
-        existingFooter.remove();
-      }
-      
-      // Obter próxima seção
-      const nextSection = sectionNavigation[currentPath];
-      
-      if (nextSection && nextSection.name) {
-        const markdownSection = document.querySelector('.markdown-section');
-        if (markdownSection) {
-          const footer = document.createElement('div');
-          footer.className = 'next-section-footer';
-          footer.innerHTML = `
-            <div class="next-section-content">
-              <span class="next-section-label">Continue reading:</span>
-              <a href="${nextSection.href}" class="next-section-button">
-                Go to ${nextSection.name} →
-              </a>
-            </div>
-          `;
-          markdownSection.appendChild(footer);
-        }
-      }
-    }
-    
-    // Atualizar quando Docsify terminar de carregar
-    if (window.$docsify) {
-      window.$docsify.plugins = [].concat(window.$docsify.plugins || [], function(hook) {
-        hook.doneEach(function() {
-          setTimeout(updateActiveTab, 100);
-          setTimeout(addNextSectionFooter, 200);
-        });
-      });
-    }
-    
-    // Adicionar footer ao carregar a página
-    document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(addNextSectionFooter, 500);
-    });
-    
-    // Adicionar footer ao mudar de rota
-    window.addEventListener('hashchange', function() {
-      setTimeout(addNextSectionFooter, 300);
-    });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
 </body>
