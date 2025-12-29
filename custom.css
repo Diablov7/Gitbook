@@ -111,23 +111,20 @@ a:focus {
   font-weight: 700 !important;
 }
 
-/* Logo no título do sidebar (logo acima, texto abaixo, centralizado) */
+/* Logo no título do sidebar */
 .sidebar .app-name-link {
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 0.75em;
-  padding: 1.25em 1em 0.75em 1em;
-  text-align: center;
+  padding: 0.5em 0;
   white-space: normal;
-  line-height: 1.3;
 }
 
 .sidebar .app-name-link::before {
   content: '';
-  display: block;
-  width: 42px;
-  height: 42px;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -147,19 +144,21 @@ a:focus {
   border-left: 2px solid var(--border) !important;
 }
 
-/* Ícones SVG para sidebar */
+/* Ícones SVG para sidebar (inline, ao lado do texto) */
 .sidebar ul li a {
-  position: relative;
-  padding-left: 2.5em !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.6em !important;
+  padding-left: 1.25em !important;
 }
 
 /* Overview - Documento */
 .sidebar ul li:nth-child(1) a::before {
   content: '';
-  position: absolute;
-  left: 1em;
+  display: inline-block;
   width: 16px;
   height: 16px;
+  flex-shrink: 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20'/%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
@@ -170,10 +169,10 @@ a:focus {
 /* Program Structure - Grid */
 .sidebar ul li:nth-child(2) a::before {
   content: '';
-  position: absolute;
-  left: 1em;
+  display: inline-block;
   width: 16px;
   height: 16px;
+  flex-shrink: 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='7' height='7'/%3E%3Crect x='14' y='3' width='7' height='7'/%3E%3Crect x='14' y='14' width='7' height='7'/%3E%3Crect x='3' y='14' width='7' height='7'/%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
@@ -184,10 +183,10 @@ a:focus {
 /* Performance Scoring & Compensation - Gráfico */
 .sidebar ul li:nth-child(3) a::before {
   content: '';
-  position: absolute;
-  left: 1em;
+  display: inline-block;
   width: 16px;
   height: 16px;
+  flex-shrink: 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='22 12 18 12 15 21 9 3 6 12 2 12'/%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
@@ -198,10 +197,10 @@ a:focus {
 /* Code of Conduct & Brand - Escudo */
 .sidebar ul li:nth-child(4) a::before {
   content: '';
-  position: absolute;
-  left: 1em;
+  display: inline-block;
   width: 16px;
   height: 16px;
+  flex-shrink: 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
@@ -244,20 +243,20 @@ h6,
   line-height: 1.15 !important;
 }
 
-.markdown-section h1 { margin: 0 0 0.5rem 0 !important; font-size: 2.4rem; }
-.markdown-section h2 { margin: 0.9rem 0 0.35rem 0 !important; font-size: 1.9rem; }
-.markdown-section h3 { margin: 0.75rem 0 0.3rem 0 !important; font-size: 1.5rem; }
-.markdown-section h4 { margin: 0.6rem 0 0.25rem 0 !important; font-size: 1.2rem; }
+.markdown-section h1 { margin: 0 0 0.9rem 0 !important; font-size: 2.4rem; }
+.markdown-section h2 { margin: 1.5rem 0 0.7rem 0 !important; font-size: 1.9rem; }
+.markdown-section h3 { margin: 1.25rem 0 0.6rem 0 !important; font-size: 1.5rem; }
+.markdown-section h4 { margin: 1rem 0 0.5rem 0 !important; font-size: 1.2rem; }
 
-/* Parágrafos (compacto) */
+/* Parágrafos (espaçamento confortável) */
 .markdown-section p {
-  margin: 0 0 0.25rem 0 !important;
-  line-height: 1.45 !important;
+  margin: 0 0 0.75rem 0 !important;
+  line-height: 1.7 !important;
   color: var(--text) !important;
 }
 
 .markdown-section p + p {
-  margin-top: 0.25rem !important;
+  margin-top: 0.75rem !important;
 }
 
 .markdown-section p + h1,
@@ -266,7 +265,7 @@ h6,
 .markdown-section p + h4,
 .markdown-section p + h5,
 .markdown-section p + h6 {
-  margin-top: 0.5rem !important;
+  margin-top: 1.5rem !important;
 }
 
 /* Listas: numeração NATIVA (1,2,3...) - sem counters/círculos */
@@ -282,8 +281,9 @@ h6,
   display: list-item !important;
   list-style: decimal !important;
   list-style-type: decimal !important;
-  margin: 0.2rem 0 !important;
+  margin: 0.5rem 0 !important;
   padding: 0 !important;
+  line-height: 1.7 !important;
   counter-increment: none !important;
 }
 
@@ -307,16 +307,20 @@ h6,
 
 .markdown-section ul {
   padding-left: 1.6rem !important;
-  margin: 0.35rem 0 !important;
+  margin: 0.7rem 0 !important;
 }
 
 .markdown-section ul > li {
-  margin: 0.2rem 0 !important;
+  margin: 0.5rem 0 !important;
+  line-height: 1.7 !important;
 }
 
 /* Blockquote / code */
 .markdown-section blockquote {
-  margin: 0.35rem 0 !important;
+  margin: 1rem 0 !important;
+  padding: 1rem 1.25rem !important;
+  line-height: 1.7 !important;
+}
   padding: 0.75rem 1rem !important;
   background: var(--panel) !important;
   border-left: 3px solid var(--border) !important;
