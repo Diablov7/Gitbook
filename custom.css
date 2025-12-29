@@ -432,11 +432,11 @@ h6,
 }
 
 .pagination-item--prev {
-  text-align: left !important;
+  text-align: center !important;
 }
 
 .pagination-item--next {
-  text-align: right !important;
+  text-align: center !important;
   margin-left: auto !important;
 }
 
@@ -471,10 +471,16 @@ h6,
   flex: 1 !important;
   text-align: center !important;
   width: 100% !important;
+  margin: 0 auto !important;
 }
 
-.pagination-item-title * {
+.pagination-item-title,
+.pagination-item-title *,
+.pagination-item--prev .pagination-item-title,
+.pagination-item--next .pagination-item-title {
   text-align: center !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 .pagination-item-title:hover {
@@ -508,7 +514,13 @@ h6,
 
   .pagination-item--prev,
   .pagination-item--next {
-    text-align: left !important;
+    text-align: center !important;
+  }
+  
+  .pagination-item--prev .pagination-item-title,
+  .pagination-item--next .pagination-item-title {
+    text-align: center !important;
+    justify-content: center !important;
   }
 }
 
