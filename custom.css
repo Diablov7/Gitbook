@@ -143,6 +143,8 @@ body:hover::after {
   color: var(--sidebar-text-color) !important;
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 600 !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
   transition: all 0.3s ease;
   padding: 0.5em 1em;
   border-radius: 6px;
@@ -260,7 +262,7 @@ body:hover::after {
 .markdown-section h1 {
   font-size: 2.5em;
   font-weight: 800;
-  border-bottom: 2px solid var(--glass-border);
+  border-bottom: none;
   padding-bottom: 0.5em;
   margin-top: 0;
 }
@@ -281,18 +283,20 @@ body:hover::after {
   font-size: 1.25em;
 }
 
-/* Links */
+/* Links - ABNT: sem sublinhado, apenas diferenciação por cor */
 .markdown-section a {
   color: var(--link-color) !important;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  text-decoration: none !important;
+  border-bottom: none !important;
   transition: all 0.3s ease;
   font-family: 'Montserrat', sans-serif !important;
 }
 
 .markdown-section a:hover {
-  color: var(--link-hover-color) !important;
-  border-bottom-color: rgba(255, 255, 255, 0.6);
+  color: var(--purple-light) !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  opacity: 0.8;
 }
 
 /* Texto geral */
@@ -623,6 +627,17 @@ button {
   font-family: 'Montserrat', sans-serif !important;
 }
 
+/* Regra geral ABNT: remover todos os sublinhados de links */
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
 /* Espaçamento consistente entre seções */
 .markdown-section > * + * {
   margin-top: 1.5em;
@@ -780,12 +795,12 @@ button {
   display: inline-block;
   padding: 1em 1.5em;
   color: var(--sidebar-text-color);
-  text-decoration: none;
+  text-decoration: none !important;
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 500;
   font-size: 0.9em;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-bottom: 3px solid transparent;
+  border-bottom: none !important;
   position: relative;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -819,7 +834,7 @@ button {
 
 .nav-tab.active {
   color: var(--purple-light) !important;
-  border-bottom-color: var(--purple-light-rgba) !important;
+  border-bottom: none !important;
   font-weight: 600;
   background: var(--purple-light-bg);
   backdrop-filter: blur(10px);
@@ -952,7 +967,8 @@ body {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   color: #ffffff !important;
-  text-decoration: none;
+  text-decoration: none !important;
+  border-bottom: none !important;
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 600;
   font-size: 1em;
