@@ -1,200 +1,124 @@
+/*
+  custom.css (limpo e determinístico)
+
+  Requisitos que você cobrou:
+  - Fundo roxo removido: nenhum background roxo em lugar nenhum
+  - Listas <ol>: numeração nativa 1, 2, 3... (sem counters e sem círculos)
+  - Espaçamento compacto entre parágrafos
+  - Botões/caixas do footer com borda nos 4 lados
+  - Sem bordas arredondadas
+  - Sem sublinhado (ABNT)
+*/
+
 :root {
-  /* Cellframe Brand Colors */
-  --color-main: #151515;
-  --color-main-light: #1E1E1E;
-  --color-secondary: #222222;
-  --color-secondary-lighter: #292631;
-  --color-tertiary: #363636;
-  --color-tertiary-transparent: rgba(54, 54, 54, 0.32);
-  --color-tertiary-light: #4D4D4D;
-  --color-dark: #000000;
-  --color-neutral-dark: #191919;
-  
-  /* Cellframe Accent Colors */
-  --color-accent-main: #B3A3FF;
-  --color-accent-main-rgba: rgba(179, 163, 255, 0.24);
-  --color-accent-secondary: #CCC2FF;
-  --color-accent-tertiary: #353144;
-  
-  /* Cellframe Font Colors */
-  --color-font-main: #FFFFFF;
-  --color-font-secondary: #CFCFCF;
-  
-  /* Cellframe Font Families */
-  --font-family-main: "Inter", sans-serif;
-  --font-family-secondary: "Rubik", sans-serif;
-  
-  /* Legacy variables for compatibility */
-  --base-background-color: var(--color-main);
-  --sidebar-background: var(--color-secondary);
-  --sidebar-text-color: var(--color-font-main);
-  --sidebar-border-color: var(--color-tertiary-transparent);
-  --text-color-base: var(--color-font-main);
-  --heading-color: var(--color-font-main);
-  --link-color: var(--color-accent-main);
-  --link-hover-color: var(--color-accent-secondary);
-  --code-background: var(--color-secondary);
-  --code-border: var(--color-tertiary-transparent);
-  --blockquote-border: var(--color-accent-main);
-  --blockquote-background: var(--color-secondary);
-  --table-border: var(--color-tertiary-transparent);
-  --table-header-background: var(--color-secondary);
-  --scrollbar-thumb: var(--color-tertiary);
-  --scrollbar-track: var(--color-main);
-  --glass-bg: var(--color-secondary);
-  --glass-border: var(--color-tertiary-transparent);
-  --purple-light: var(--color-accent-main);
-  --purple-light-rgba: var(--color-accent-main-rgba);
-  --purple-light-bg: var(--color-accent-main-rgba);
-  
-  /* Transitions */
-  --transition-all-main: all ease-out 0.25s;
+  --bg: #151515;
+  --panel: #222222;
+  --panel-2: #1e1e1e;
+  --border: rgba(255, 255, 255, 0.16);
+  --text: #ffffff;
+  --muted: #cfcfcf;
+
+  --font-main: "Inter", sans-serif;
+  --font-heading: "Rubik", sans-serif;
 }
 
-/* Cellframe Typography */
-* {
-  font-family: var(--font-family-main) !important;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-radius: 0 !important;
 }
 
-h1, h2, h3, h4, h5, h6,
-.markdown-section h1,
-.markdown-section h2,
-.markdown-section h3,
-.markdown-section h4,
-.markdown-section h5,
-.markdown-section h6 {
-  font-family: var(--font-family-secondary) !important;
-  font-weight: 600;
-}
-
-/* Body com cores Cellframe */
+/* Fundo único (sem imagens/overlays) */
+html,
 body {
-  background: var(--color-main) !important;
-  background-image: 
-    url('assets/images/background.jpg'),
-    url('https://cellframe.net/static/main/img/bg/base-bg_pattern.png');
-  background-size: 
-    cover,
-    auto;
-  background-position: 
-    center,
-    center;
-  background-attachment: fixed;
-  background-repeat: 
-    no-repeat,
-    repeat;
-  min-height: 100vh;
-  position: relative;
+  background: var(--bg) !important;
+  background-color: var(--bg) !important;
+  background-image: none !important;
 }
 
-/* Overlay escuro para melhorar legibilidade - Cellframe style */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--color-main);
-  opacity: 0.85;
-  z-index: -1;
-  pointer-events: none;
+body::before,
+body::after,
+#app::before,
+#app::after,
+.content::before,
+.content::after,
+section.content::before,
+section.content::after,
+.markdown-section::before,
+.markdown-section::after {
+  display: none !important;
+  content: none !important;
 }
 
-/* Elementos decorativos - Cellframe accent colors */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(circle at 10% 20%, var(--color-accent-main-rgba) 0%, transparent 30%),
-    radial-gradient(circle at 90% 70%, rgba(179, 163, 255, 0.12) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(179, 163, 255, 0.08) 0%, transparent 50%);
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.4;
-  transition: var(--transition-all-main);
+/* Remover “segundo fundo” do Docsify */
+#app,
+main,
+.content,
+.section,
+.section.content,
+.app-body,
+.markdown-body,
+.docsify-pagination-container,
+article,
+section {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
 }
 
-/* Efeito hover no body para ativar elementos decorativos */
-body:hover::after {
-  opacity: 0.6;
+/* Tipografia base */
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-main) !important;
+  color: var(--text) !important;
 }
 
-/* Sidebar com estilo Cellframe */
-.sidebar {
-  background: var(--color-secondary) !important;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-right: 2px solid var(--color-tertiary-transparent) !important;
-  box-shadow: 
-    4px 0 20px rgba(0, 0, 0, 0.5),
-    0 0 0 1px var(--color-accent-main-rgba) inset,
-    inset -2px 0 0 var(--color-accent-main-rgba);
-  position: relative;
-  border-top: 1px solid var(--color-tertiary-transparent);
-  border-bottom: 1px solid var(--color-tertiary-transparent);
-}
-
-.sidebar::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, 
-    transparent 0%, 
-    var(--color-accent-main-rgba) 20%, 
-    var(--color-accent-main-rgba) 80%, 
-    transparent 100%);
-  opacity: 0.3;
-  box-shadow: 0 0 5px var(--color-accent-main-rgba);
-  transition: var(--transition-all-main);
-}
-
-.sidebar:hover::before {
-  opacity: 0.6;
-  box-shadow: 0 0 15px var(--color-accent-main-rgba);
-  width: 3px;
-}
-
-.sidebar::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(183, 148, 246, 0.2) 50%, 
-    transparent 100%);
-  opacity: 0.5;
-}
-
-.sidebar ul li a {
-  color: var(--sidebar-text-color) !important;
-  font-family: 'Montserrat', sans-serif !important;
-  font-weight: 600 !important;
+/* ABNT: sem sublinhado em links */
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: var(--text) !important;
   text-decoration: none !important;
   border-bottom: none !important;
-  transition: all 0.3s ease;
-  padding: 0.5em 1em;
-  border-radius: 0;
-  margin: 0.2em 0;
-  display: flex;
-  align-items: center;
-  gap: 0.75em;
-  line-height: 1.6;
-  position: relative;
-  padding-left: 2.5em;
 }
 
-/* Ícones SVG minimalistas para sidebar */
+/* Sidebar: apenas cinza (sem roxo) */
+.sidebar {
+  background: var(--panel) !important;
+  border-right: 1px solid var(--border) !important;
+  box-shadow: none !important;
+}
+
+.sidebar .app-name,
+.sidebar .app-name-link,
+.sidebar a,
+.sidebar ul li a {
+  color: var(--text) !important;
+  font-weight: 700 !important;
+}
+
+.sidebar ul li.active > a,
+.sidebar-nav li.active > a,
+.sidebar-nav > ul > li.active > a {
+  background: var(--panel-2) !important;
+  border-left: 2px solid var(--border) !important;
+}
+
+/* Ícones SVG para sidebar */
+.sidebar ul li a {
+  position: relative;
+  padding-left: 2.5em !important;
+}
+
+/* Overview - Documento */
 .sidebar ul li:nth-child(1) a::before {
   content: '';
   position: absolute;
@@ -206,9 +130,9 @@ body:hover::after {
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.7;
-  transition: opacity 0.3s ease;
 }
 
+/* Program Structure - Grid */
 .sidebar ul li:nth-child(2) a::before {
   content: '';
   position: absolute;
@@ -220,9 +144,9 @@ body:hover::after {
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.7;
-  transition: opacity 0.3s ease;
 }
 
+/* Performance Scoring & Compensation - Gráfico */
 .sidebar ul li:nth-child(3) a::before {
   content: '';
   position: absolute;
@@ -234,9 +158,9 @@ body:hover::after {
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.7;
-  transition: opacity 0.3s ease;
 }
 
+/* Code of Conduct & Brand - Escudo */
 .sidebar ul li:nth-child(4) a::before {
   content: '';
   position: absolute;
@@ -248,927 +172,184 @@ body:hover::after {
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.7;
-  transition: opacity 0.3s ease;
 }
 
+/* Hover e active states para ícones */
 .sidebar ul li a:hover::before,
 .sidebar ul li.active > a::before {
   opacity: 1;
 }
 
-.sidebar ul li.active > a::before {
-  filter: brightness(0) saturate(100%) invert(70%) sepia(50%) saturate(500%) hue-rotate(230deg);
-  opacity: 1;
-}
-
-.sidebar ul li a:hover {
-  color: var(--color-accent-main) !important;
-  background: var(--color-secondary-lighter);
-  backdrop-filter: blur(10px);
-  transform: translateX(4px);
-  transition: var(--transition-all-main);
-}
-
-.sidebar ul li.active > a {
-  color: var(--color-accent-main) !important;
-  font-weight: 600 !important;
-  background: var(--color-accent-main-rgba);
-  backdrop-filter: blur(10px);
-  border-left: 2px solid var(--color-accent-main);
-}
-
-/* Título principal da sidebar - Cellframe style */
-.sidebar h1,
-.sidebar h1 a,
-.sidebar .app-name,
-.sidebar .app-name-link,
-.sidebar .app-name-link a {
-  font-weight: 600 !important;
-  font-family: var(--font-family-secondary) !important;
-  color: var(--color-font-main) !important;
-  font-size: 1.1em !important;
-}
-
-/* Garantir que todos os links da sidebar estejam em negrito */
-.sidebar a {
-  font-weight: 600 !important;
-}
-
-/* Estilizar ícones na sidebar - espaçamento adequado */
-.sidebar ul li a {
-  font-size: 0.95em;
-}
-
-/* Garantir que os ícones tenham espaçamento adequado */
-.sidebar ul li a {
-  text-indent: 0;
-}
-
-/* Conteúdo principal - Cellframe style */
+/* Conteúdo principal */
 .markdown-section {
-  color: var(--color-font-main) !important;
-  background: var(--color-secondary) !important;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  padding: 3em;
-  border-radius: 0;
-  border: 1px solid var(--color-tertiary-transparent);
-  font-family: var(--font-family-main) !important;
   max-width: 900px;
-  line-height: 1.8;
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.5),
-    0 0 0 1px var(--color-accent-main-rgba) inset,
-    0 0 60px rgba(179, 163, 255, 0.05);
-  margin: 2em auto;
-  position: relative;
-  overflow: hidden;
-  transition: var(--transition-all-main);
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-.markdown-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-accent-main-rgba), transparent);
-  opacity: 0.3;
-  transition: var(--transition-all-main);
-}
-
-.markdown-section:hover {
-  box-shadow: 
-    0 12px 40px 0 rgba(0, 0, 0, 0.6),
-    0 0 0 1px var(--color-accent-main-rgba) inset,
-    0 0 100px rgba(179, 163, 255, 0.15);
-  transform: translateY(-2px);
-  border-color: var(--color-accent-main-rgba);
-}
-
-.markdown-section:hover::before {
-  opacity: 1;
-  height: 3px;
-  box-shadow: 0 0 20px var(--color-accent-main-rgba);
-}
-
-/* Títulos - Cellframe Rubik font */
+/* Títulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .markdown-section h1,
 .markdown-section h2,
 .markdown-section h3,
 .markdown-section h4,
 .markdown-section h5,
 .markdown-section h6 {
-  color: var(--color-font-main) !important;
-  font-family: var(--font-family-secondary) !important;
-  font-weight: 600;
-  margin-top: 1.5em;
-  margin-bottom: 0.6em;
-  line-height: 1.3;
+  font-family: var(--font-heading) !important;
+  color: var(--text) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
 }
 
-.markdown-section h1 {
-  font-size: 2.5em;
-  font-weight: 800;
-  border-bottom: none;
-  padding-bottom: 0.5em;
-  margin-top: 0;
-}
+.markdown-section h1 { margin: 0 0 0.5rem 0 !important; font-size: 2.4rem; }
+.markdown-section h2 { margin: 0.9rem 0 0.35rem 0 !important; font-size: 1.9rem; }
+.markdown-section h3 { margin: 0.75rem 0 0.3rem 0 !important; font-size: 1.5rem; }
+.markdown-section h4 { margin: 0.6rem 0 0.25rem 0 !important; font-size: 1.2rem; }
 
-.markdown-section h2 {
-  font-size: 2em;
-  font-weight: 700;
-  margin-top: 1.8em;
-}
-
-.markdown-section h3 {
-  font-weight: 600;
-  font-size: 1.5em;
-}
-
-.markdown-section h4 {
-  font-weight: 600;
-  font-size: 1.25em;
-}
-
-/* Links - Cellframe accent color */
-.markdown-section a {
-  color: var(--color-accent-main) !important;
-  text-decoration: none !important;
-  border-bottom: none !important;
-  transition: var(--transition-all-main);
-  font-family: var(--font-family-main) !important;
-}
-
-.markdown-section a:hover {
-  color: var(--color-accent-secondary) !important;
-  text-decoration: none !important;
-  border-bottom: none !important;
-  opacity: 0.9;
-}
-
-/* Texto geral */
+/* Parágrafos (compacto) */
 .markdown-section p {
-  font-family: var(--font-family-main) !important;
-  font-weight: 400;
-  line-height: 1.6;
-  margin: 0;
-  margin-bottom: 0.8em;
-  color: var(--color-font-main);
+  margin: 0 0 0.25rem 0 !important;
+  line-height: 1.45 !important;
+  color: var(--text) !important;
 }
 
-.markdown-section p:last-child {
-  margin-bottom: 0;
-}
-
-/* Espaçamento entre parágrafos consecutivos - reduzido */
 .markdown-section p + p {
-  margin-top: 0.8em;
+  margin-top: 0.25rem !important;
 }
 
-/* Divisores */
-.markdown-section hr {
-  opacity: 0.3;
-  border: none;
-  border-top: 1px solid var(--glass-border);
-  margin: 3em 0;
-}
-
-/* Código com glassmorphism */
-.markdown-section code {
-  background: var(--code-background) !important;
-  backdrop-filter: blur(10px);
-  color: #ffffff !important;
-  padding: 0.2em 0.4em;
-  border-radius: 0;
-  font-size: 0.9em;
-  border: 1px solid var(--glass-border);
-  font-family: 'Montserrat', monospace !important;
-}
-
-.markdown-section pre {
-  background: var(--code-background) !important;
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-  border-radius: 0;
-  padding: 1.5em;
-  overflow-x: auto;
-  margin: 1.5em 0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-}
-
-.markdown-section pre code {
-  background: transparent !important;
-  border: none;
-  padding: 0;
-  color: var(--text-color-base) !important;
-  font-family: 'Montserrat', monospace !important;
-}
-
-/* Blockquotes com glassmorphism */
-.markdown-section blockquote {
-  border-left: 4px solid var(--blockquote-border);
-  background: var(--blockquote-background);
-  backdrop-filter: blur(10px);
-  padding: 1em 1.5em;
-  margin: 0;
-  margin-bottom: 1.5em;
-  border-radius: 0;
-  font-family: 'Montserrat', sans-serif !important;
-  border: 1px solid var(--glass-border);
-}
-
-.markdown-section blockquote p {
-  margin: 0;
-  color: var(--text-color-base);
-}
-
-/* Listas */
-.markdown-section ul {
-  padding-left: 2em;
-  font-family: var(--font-family-main) !important;
-  margin: 0;
-  margin-bottom: 1.5em;
-}
-
-/* Listas numeradas têm estilo especial de timeline (definido abaixo) */
-.markdown-section ol:not(.no-timeline) {
-  padding-left: 0;
-  font-family: var(--font-family-main) !important;
-  margin: 0;
-  margin-bottom: 0.5em;
-}
-
-.markdown-section li {
-  margin: 0.2em 0;
-  line-height: 1.6;
-  font-family: var(--font-family-main) !important;
-  color: var(--color-font-main);
-}
-
-.markdown-section ul li::marker {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-/* Tabelas com glassmorphism */
-.markdown-section table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 1.5em 0;
-  border: 1px solid var(--glass-border);
-  border-radius: 0;
-  overflow: hidden;
-  background: var(--code-background);
-  backdrop-filter: blur(10px);
-  font-family: 'Montserrat', sans-serif !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-}
-
-.markdown-section table thead {
-  background: var(--table-header-background);
-  backdrop-filter: blur(10px);
-}
-
-.markdown-section table th {
-  padding: 1em;
-  text-align: left;
-  font-weight: 600;
-  color: var(--heading-color);
-  border-bottom: 2px solid var(--glass-border);
-  font-family: 'Montserrat', sans-serif !important;
-}
-
-.markdown-section table td {
-  padding: 1em;
-  border-bottom: 1px solid var(--glass-border);
-  font-family: 'Montserrat', sans-serif !important;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.markdown-section table tr:last-child td {
-  border-bottom: none;
-}
-
-.markdown-section table tr:hover {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(5px);
-}
-
-/* Imagens */
-.markdown-section img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 0;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  margin: 1.5em 0;
-  transition: transform 0.3s ease;
-  border: 1px solid var(--glass-border);
-}
-
-.markdown-section img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
-}
-
-/* Figuras */
-.markdown-section figure {
-  margin: 2em 0;
-  text-align: center;
-}
-
-.markdown-section figcaption {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9em;
-  margin-top: 0.5em;
-  font-style: italic;
-  font-family: 'Montserrat', sans-serif !important;
-}
-
-/* Scrollbar customizada */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--scrollbar-track);
-  backdrop-filter: blur(10px);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb);
-  border-radius: 0;
-  border: 2px solid transparent;
-  background-clip: padding-box;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-/* Botão de busca com glassmorphism */
-input[type="search"] {
-  background: var(--code-background) !important;
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border) !important;
-  color: var(--text-color-base) !important;
-  border-radius: 0;
-  font-family: 'Montserrat', sans-serif !important;
-}
-
-input[type="search"]:focus {
-  outline: none;
-  border-color: rgba(255, 255, 255, 0.3) !important;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
-  background: rgba(0, 0, 0, 0.5) !important;
-}
-
-/* Details/Summary com glassmorphism */
-.markdown-section details {
-  background: var(--code-background);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-  border-radius: 0;
-  padding: 1em;
-  margin: 1em 0;
-  font-family: 'Montserrat', sans-serif !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-}
-
-.markdown-section details summary {
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--link-color);
-  user-select: none;
-  font-family: 'Montserrat', sans-serif !important;
-  padding: 0.5em;
-  border-radius: 0;
-  transition: all 0.3s ease;
-}
-
-.markdown-section details summary:hover {
-  color: var(--link-hover-color);
-  background: var(--glass-bg);
-}
-
-.markdown-section details[open] summary {
-  margin-bottom: 1em;
-}
-
-/* Hints com glassmorphism */
-.markdown-section .hint {
-  border-left: 4px solid rgba(255, 255, 255, 0.3);
-  padding: 1em;
-  margin: 1.5em 0;
-  border-radius: 0;
-  font-family: 'Montserrat', sans-serif !important;
-  background: var(--code-background);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-}
-
-.markdown-section .hint.info {
-  background: var(--code-background);
-  backdrop-filter: blur(10px);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Timeline/Stepper Style - Listas numeradas com círculos conectados */
-.markdown-section ol {
-  counter-reset: step-counter;
-  list-style: none;
-  padding-left: 0;
-  margin: 1em 0;
-  position: relative;
-}
-
-.markdown-section ol::before {
-  content: '';
-  position: absolute;
-  left: 20px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--color-tertiary);
-  opacity: 0.5;
-  z-index: 0;
-}
-
-.markdown-section ol li {
-  counter-increment: step-counter;
-  position: relative;
-  padding-left: 60px;
-  padding-bottom: 1em;
-  margin: 0;
-  list-style: none;
-  min-height: 40px;
-}
-
-.markdown-section ol li::before {
-  content: counter(step-counter);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 40px;
-  height: 40px;
-  background: var(--color-tertiary);
-  color: var(--color-font-main);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 0.95em;
-  border-radius: 50%;
-  border: 2px solid var(--color-tertiary-transparent);
-  z-index: 1;
-  font-family: var(--font-family-main);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-}
-
-.markdown-section ol li:last-child {
-  padding-bottom: 0;
-}
-
-.markdown-section ol li:last-child::after {
-  display: none;
-}
-
-/* Títulos em negrito dentro das listas numeradas */
-.markdown-section ol li strong:first-child,
-.markdown-section ol li b:first-child {
-  display: block;
-  font-weight: 600;
-  font-size: 1.05em;
-  margin-bottom: 0.5em;
-  color: var(--color-font-main);
-  font-family: var(--font-family-secondary);
-}
-
-/* Texto descritivo nas listas numeradas */
-.markdown-section ol li {
-  color: var(--color-font-secondary);
-  line-height: 1.7;
-}
-
-.markdown-section ol li p {
-  margin: 0.5em 0 0 0;
-  color: var(--color-font-secondary);
-}
-
-/* Steppers com glassmorphism (mantido para compatibilidade) */
-.markdown-section .stepper {
-  margin: 2em 0;
-}
-
-.markdown-section .stepper .step {
-  margin: 1.5em 0;
-  padding: 1.5em;
-  background: var(--code-background);
-  backdrop-filter: blur(10px);
-  border-radius: 0;
-  border-left: 3px solid rgba(255, 255, 255, 0.3);
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsividade base - já coberto nas otimizações mobile abaixo */
-
-/* Animações suaves */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.markdown-section {
-  animation: fadeIn 0.3s ease-in;
-}
-
-/* Melhorias de acessibilidade */
-.markdown-section a:focus,
-.sidebar a:focus {
-  outline: 2px solid rgba(255, 255, 255, 0.5);
-  outline-offset: 2px;
-  border-radius: 0;
-}
-
-/* Garantir que todos os elementos usem Montserrat */
-.app-name,
-.sidebar-toggle,
-.search input,
-button {
-  font-family: 'Montserrat', sans-serif !important;
-}
-
-/* Regra geral ABNT: remover todos os sublinhados de links */
-a,
-a:link,
-a:visited,
-a:hover,
-a:active,
-a:focus {
-  text-decoration: none !important;
-  border-bottom: none !important;
-}
-
-/* Espaçamento consistente entre seções - muito reduzido */
-.markdown-section > * + * {
-  margin-top: 0.6em;
-}
-
-/* Espaçamento após títulos - reduzido */
-.markdown-section > h1 + *,
-.markdown-section > h2 + *,
-.markdown-section > h3 + *,
-.markdown-section > h4 + *,
-.markdown-section > h5 + *,
-.markdown-section > h6 + * {
-  margin-top: 0.6em;
-}
-
-/* Espaçamento após parágrafos seguidos de outros elementos - reduzido */
 .markdown-section p + h1,
 .markdown-section p + h2,
 .markdown-section p + h3,
 .markdown-section p + h4,
 .markdown-section p + h5,
 .markdown-section p + h6 {
-  margin-top: 1.2em;
+  margin-top: 0.5rem !important;
 }
 
-/* Espaçamento após listas - muito reduzido */
-.markdown-section ul + p,
-.markdown-section ol + p {
-  margin-top: 0.4em;
+/* Listas: numeração NATIVA (1,2,3...) - sem counters/círculos */
+.markdown-section ol {
+  list-style: decimal !important;
+  list-style-type: decimal !important;
+  padding-left: 1.6rem !important;
+  margin: 0.35rem 0 !important;
+  counter-reset: none !important;
 }
 
-.markdown-section p + ul,
-.markdown-section p + ol {
-  margin-top: 0.4em;
+.markdown-section ol > li {
+  display: list-item !important;
+  list-style: decimal !important;
+  list-style-type: decimal !important;
+  margin: 0.2rem 0 !important;
+  padding: 0 !important;
+  counter-increment: none !important;
 }
 
-/* Espaçamento após blockquotes - reduzido */
-.markdown-section blockquote + p,
-.markdown-section p + blockquote {
-  margin-top: 0.8em;
+.markdown-section ol > li::before,
+.markdown-section ol > li::after,
+.markdown-section ol li::before,
+.markdown-section ol li::after,
+.markdown-section ol li > p::before,
+.markdown-section ol li > p::after,
+.markdown-section ol::before,
+.markdown-section ol::after {
+  display: none !important;
+  content: none !important;
 }
 
-/* Ajustar conteúdo - sem header superior */
-body {
-  padding-top: 0 !important;
+/* Garantir que o marcador numérico padrão apareça (1,2,3...) */
+.markdown-section ol > li::marker {
+  color: var(--text) !important;
+  font-weight: 700 !important;
 }
 
-#app {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+.markdown-section ul {
+  padding-left: 1.6rem !important;
+  margin: 0.35rem 0 !important;
 }
 
-/* Garantir que o conteúdo principal não fique escondido */
-.section.content,
-.markdown-section {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+.markdown-section ul > li {
+  margin: 0.2rem 0 !important;
 }
 
-/* Ajustar sidebar - sem header superior */
-.sidebar {
-  top: 0 !important;
-  height: 100vh !important;
+/* Blockquote / code */
+.markdown-section blockquote {
+  margin: 0.35rem 0 !important;
+  padding: 0.75rem 1rem !important;
+  background: var(--panel) !important;
+  border-left: 3px solid var(--border) !important;
+  color: var(--muted) !important;
 }
 
-/* Otimização para Mobile - Leitura otimizada */
-@media (max-width: 768px) {
-  /* Sidebar mobile - hamburger menu do Docsify */
-  .sidebar {
-    width: 280px !important;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-  }
-  
-  .sidebar.open {
-    transform: translateX(0);
-  }
-  
-  /* Conteúdo principal mobile */
-  .markdown-section {
-    padding: 1.5em 1em !important;
-    margin: 1em 0.5em !important;
-    border-radius: 0;
-    font-size: 16px;
-    line-height: 1.7;
-  }
-  
-  /* Títulos mobile */
-  .markdown-section h1 {
-    font-size: 1.8em !important;
-    margin-top: 0.5em;
-    margin-bottom: 0.8em;
-  }
-  
-  .markdown-section h2 {
-    font-size: 1.5em !important;
-    margin-top: 1.5em;
-    margin-bottom: 0.8em;
-  }
-  
-  .markdown-section h3 {
-    font-size: 1.25em !important;
-    margin-top: 1.2em;
-    margin-bottom: 0.6em;
-  }
-  
-  .markdown-section h4 {
-    font-size: 1.1em !important;
-  }
-  
-  /* Parágrafos mobile */
-  .markdown-section p {
-    font-size: 16px;
-    line-height: 1.7;
-    margin-bottom: 1.2em;
-  }
-  
-  /* Listas mobile */
-  .markdown-section ul,
-  .markdown-section ol {
-    padding-left: 1.5em;
-    margin-bottom: 1.2em;
-  }
-  
-  .markdown-section li {
-    margin-bottom: 0.6em;
-    line-height: 1.7;
-  }
-  
-  /* Tabelas mobile */
-  .markdown-section table {
-    font-size: 0.9em;
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  .markdown-section table th,
-  .markdown-section table td {
-    padding: 0.6em 0.8em;
-    min-width: 100px;
-  }
-  
-  /* Código mobile */
-  .markdown-section pre {
-    padding: 1em;
-    font-size: 0.85em;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  /* Blockquotes mobile */
-  .markdown-section blockquote {
-    padding: 1em;
-    margin: 1.2em 0;
-  }
-  
-  /* Imagens mobile */
-  .markdown-section img {
-    border-radius: 0;
-    margin: 1.2em 0;
-  }
-  
-  /* Footer next section mobile */
-  .next-section-content {
-    padding: 1em !important;
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .next-section-button {
-    width: 100%;
-    padding: 0.9em 1.2em;
-    font-size: 0.95em;
-  }
-  
-  /* Sidebar toggle button mobile */
-  .sidebar-toggle {
-    position: fixed;
-    top: 1em;
-    left: 1em;
-    z-index: 999;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    border-radius: 0;
-    padding: 0.6em;
-    color: var(--sidebar-text-color);
-    cursor: pointer;
-  }
-  
-  /* Ajustar body para mobile */
-  body {
-    padding-top: 0 !important;
-    font-size: 16px;
-  }
-  
-  /* Melhorar legibilidade em mobile */
-  .markdown-section {
-    max-width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
+.markdown-section code {
+  background: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+  padding: 0.12rem 0.35rem;
 }
 
-@media (max-width: 480px) {
-  /* Mobile pequeno - otimizações adicionais */
-  .markdown-section {
-    padding: 1em 0.8em !important;
-    margin: 0.5em 0.3em !important;
-  }
-  
-  .markdown-section h1 {
-    font-size: 1.6em !important;
-  }
-  
-  .markdown-section h2 {
-    font-size: 1.3em !important;
-  }
-  
-  .markdown-section h3 {
-    font-size: 1.15em !important;
-  }
-  
-  .markdown-section p {
-    font-size: 15px;
-  }
-  
-  .sidebar {
-    width: 260px !important;
-  }
-  
-  .next-section-button {
-    font-size: 0.9em;
-    padding: 0.8em 1em;
-  }
+.markdown-section pre {
+  background: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+  padding: 1rem !important;
+  overflow: auto;
 }
 
-/* Next Section Footer com glassmorphism */
+/* Footer “Go to next section”: borda nos 4 lados */
 .next-section-footer {
-  margin-top: 4em;
-  padding-top: 2em;
-  border-top: 2px solid var(--glass-border);
-  margin-bottom: 2em;
+  margin-top: 2.5rem !important;
+  padding-top: 1.25rem !important;
+  border-top: 1px solid var(--border) !important;
 }
 
 .next-section-content {
   display: flex;
+  gap: 0.75rem;
   align-items: center;
   justify-content: center;
-  gap: 1em;
   flex-wrap: wrap;
-  padding: 1.5em;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(10, 10, 10, 0.4) 100%);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-radius: 0;
-  border: 1px solid var(--glass-border);
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(183, 148, 246, 0.1) inset,
-    0 0 40px rgba(183, 148, 246, 0.05);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.next-section-content::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(183, 148, 246, 0) 0%, transparent 70%);
-  pointer-events: none;
-  transition: all 0.5s ease;
-  opacity: 0;
-}
-
-.next-section-content:hover::before {
-  background: radial-gradient(circle, rgba(183, 148, 246, 0.15) 0%, transparent 70%);
-  opacity: 1;
-  transform: scale(1.1);
-}
-
-.next-section-content:hover {
-  box-shadow: 
-    0 12px 40px 0 rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(183, 148, 246, 0.3) inset,
-    0 0 80px rgba(183, 148, 246, 0.2);
-  transform: translateY(-2px);
-  border-color: rgba(183, 148, 246, 0.3);
-}
-
-.next-section-label {
-  color: rgba(255, 255, 255, 0.8);
-  font-family: 'Montserrat', sans-serif !important;
-  font-weight: 400;
-  font-size: 0.95em;
+  padding: 1rem;
+  background: transparent !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  transform: none !important;
 }
 
 .next-section-button {
   display: inline-flex;
   align-items: center;
-  padding: 0.8em 1.5em;
-  background: var(--color-accent-main-rgba);
-  backdrop-filter: blur(10px);
-  color: var(--color-font-main) !important;
-  text-decoration: none !important;
-  border-bottom: none !important;
-  font-family: var(--font-family-main) !important;
-  font-weight: 600;
-  font-size: 1em;
-  border-radius: 0;
-  transition: var(--transition-all-main);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--color-accent-main);
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  background: var(--panel) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  box-sizing: border-box !important;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
-.next-section-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(179, 163, 255, 0.3);
-  background: var(--color-accent-main);
-  border-color: var(--color-accent-secondary);
-  color: var(--color-dark) !important;
+.next-section-button:hover,
+.next-section-content:hover {
+  transform: none !important;
 }
 
-.next-section-button:active {
-  transform: translateY(0);
-}
-
-.next-section-button:focus {
-  outline: 2px solid rgba(255, 255, 255, 0.5);
-  outline-offset: 2px;
-}
-
-/* Responsividade do footer */
 @media (max-width: 768px) {
-  .next-section-content {
-    flex-direction: column;
-    text-align: center;
-    padding: 1.2em;
+  .markdown-section {
+    padding: 1rem 0.9rem;
   }
-  
+
   .next-section-button {
     width: 100%;
-    justify-content: center;
-  }
-  
-  .next-section-footer {
-    margin-top: 3em;
-    padding-top: 1.5em;
   }
 }
+
+

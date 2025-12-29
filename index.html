@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rubik:wght@400;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css">
-  <link rel="stylesheet" href="custom.css">
+  <link rel="stylesheet" href="custom.css?v=20251229">
 </head>
 <body>
   <div id="app"></div>
@@ -95,9 +95,7 @@
     // Atualizar quando Docsify terminar de carregar
     if (window.$docsify) {
       window.$docsify.plugins = [].concat(window.$docsify.plugins || [], function(hook) {
-        hook.doneEach(function() {
-          setTimeout(updateActiveTab, 100);
-          setTimeout(addNextSectionFooter, 200);
+        hook.doneEach(function() {          setTimeout(addNextSectionFooter, 200);
         });
       });
     }
