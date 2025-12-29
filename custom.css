@@ -485,10 +485,17 @@ body:hover::after {
 }
 
 /* Listas */
-.markdown-section ul,
-.markdown-section ol {
+.markdown-section ul {
   padding-left: 2em;
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: var(--font-family-main) !important;
+  margin: 0;
+  margin-bottom: 1.5em;
+}
+
+/* Listas numeradas têm estilo especial de timeline (definido abaixo) */
+.markdown-section ol:not(.no-timeline) {
+  padding-left: 0;
+  font-family: var(--font-family-main) !important;
   margin: 0;
   margin-bottom: 1.5em;
 }
@@ -496,8 +503,8 @@ body:hover::after {
 .markdown-section li {
   margin: 0.5em 0;
   line-height: 1.8;
-  font-family: 'Montserrat', sans-serif !important;
-  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-family-main) !important;
+  color: var(--color-font-main);
 }
 
 .markdown-section ul li::marker {
@@ -667,7 +674,85 @@ input[type="search"]:focus {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Steppers com glassmorphism */
+/* Timeline/Stepper Style - Listas numeradas com círculos conectados */
+.markdown-section ol {
+  counter-reset: step-counter;
+  list-style: none;
+  padding-left: 0;
+  margin: 2em 0;
+  position: relative;
+}
+
+.markdown-section ol::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-tertiary);
+  z-index: 0;
+}
+
+.markdown-section ol li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 60px;
+  padding-bottom: 2em;
+  margin: 0;
+  list-style: none;
+}
+
+.markdown-section ol li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background: var(--color-tertiary);
+  color: var(--color-font-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1em;
+  border-radius: 50%;
+  border: 2px solid var(--color-tertiary-transparent);
+  z-index: 1;
+  font-family: var(--font-family-main);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.markdown-section ol li:last-child {
+  padding-bottom: 0;
+}
+
+.markdown-section ol li:last-child::after {
+  display: none;
+}
+
+/* Títulos em negrito dentro das listas numeradas */
+.markdown-section ol li > strong:first-child,
+.markdown-section ol li > b:first-child {
+  display: block;
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+  color: var(--color-font-main);
+  font-family: var(--font-family-secondary);
+}
+
+/* Texto descritivo nas listas numeradas */
+.markdown-section ol li > p,
+.markdown-section ol li:not(:has(> p)) {
+  color: var(--color-font-secondary);
+  line-height: 1.7;
+  margin: 0;
+  margin-top: 0.5em;
+}
+
+/* Steppers com glassmorphism (mantido para compatibilidade) */
 .markdown-section .stepper {
   margin: 2em 0;
 }
