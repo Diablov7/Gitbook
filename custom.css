@@ -63,11 +63,13 @@ body::before {
 .sidebar ul li a {
   color: var(--sidebar-text-color) !important;
   font-family: 'Montserrat', sans-serif !important;
-  font-weight: 400;
+  font-weight: 600 !important;
   transition: all 0.3s ease;
   padding: 0.5em 1em;
   border-radius: 6px;
   margin: 0.2em 0;
+  display: block;
+  line-height: 1.6;
 }
 
 .sidebar ul li a:hover {
@@ -78,11 +80,32 @@ body::before {
 }
 
 .sidebar ul li.active > a {
-  color: var(--link-color) !important;
-  font-weight: 600;
-  background: var(--glass-bg);
+  color: var(--purple-light) !important;
+  font-weight: 700 !important;
+  background: var(--purple-light-bg);
   backdrop-filter: blur(10px);
-  border-left: 2px solid rgba(255, 255, 255, 0.3);
+  border-left: 2px solid var(--purple-light-rgba);
+}
+
+/* Título principal da sidebar em negrito */
+.sidebar h1,
+.sidebar .app-name,
+.sidebar .app-name-link,
+.sidebar .app-name-link a {
+  font-weight: 700 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  color: var(--heading-color) !important;
+  font-size: 1.1em !important;
+}
+
+/* Estilizar ícones na sidebar - espaçamento adequado */
+.sidebar ul li a {
+  font-size: 0.95em;
+}
+
+/* Garantir que os ícones tenham espaçamento adequado */
+.sidebar ul li a {
+  text-indent: 0;
 }
 
 /* Conteúdo principal com glassmorphism */
