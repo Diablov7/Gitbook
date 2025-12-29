@@ -799,10 +799,13 @@ input[type="search"]:focus {
   font-family: var(--font-family-secondary);
 }
 
-/* Texto descritivo nas listas numeradas */
+/* Texto descritivo nas listas numeradas - consolidado com regras acima */
 .markdown-section ol li {
   color: var(--color-font-secondary);
   line-height: 1.7;
+  padding-left: 0 !important;
+  list-style: decimal !important;
+  counter-increment: none !important;
 }
 
 .markdown-section ol li p {
