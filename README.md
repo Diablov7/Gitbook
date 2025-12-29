@@ -1,4 +1,6 @@
-# 📖 Overview
+# Overview
+
+<figure><img src="assets/images/logo-header.png" alt="Cellframe Ambassador Program" style="max-width: 300px; margin: 2em auto; display: block;"><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
