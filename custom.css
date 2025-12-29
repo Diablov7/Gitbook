@@ -737,25 +737,29 @@ input[type="search"]:focus {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Timeline/Stepper Style - Listas numeradas com círculos conectados */
-/* APENAS para "The Season Performance Cycle" - lista específica com estilo timeline */
-/* Para todas as outras listas, usar numeração padrão decimal */
-.markdown-section ol:not(.no-timeline):not(:has(li h4)) {
+/* Listas numeradas - numeração decimal padrão para TODAS */
+.markdown-section ol {
   list-style: decimal !important;
   padding-left: 2em !important;
   margin: 0.3em 0 !important;
   counter-reset: none !important;
 }
 
-.markdown-section ol:not(.no-timeline):not(:has(li h4)) li {
+.markdown-section ol li {
   padding-left: 0 !important;
   list-style: decimal !important;
   position: relative !important;
   min-height: auto !important;
   counter-increment: none !important;
+  margin: 0.2em 0 !important;
 }
 
-.markdown-section ol:not(.no-timeline):not(:has(li h4)) li::before {
+.markdown-section ol li::before {
+  display: none !important;
+  content: none !important;
+}
+
+.markdown-section ol li::after {
   display: none !important;
   content: none !important;
 }
