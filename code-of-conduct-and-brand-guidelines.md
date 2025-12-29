@@ -1,10 +1,3 @@
----
-description: >-
-  This section defines the standards of behavior and brand representation
-  expected from all Cellframe Ambassadors. All ambassadors are expected to
-  operate with integrity, responsibility, and alignment with Cellframe's values.
----
-
 # Code of Conduct and Brand Guidelines
 
 This section defines the standards of behavior and brand representation expected from all Cellframe Ambassadors. All ambassadors are expected to operate with integrity, responsibility, and alignment with Cellframe's values.
