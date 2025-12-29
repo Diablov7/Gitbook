@@ -449,7 +449,7 @@ h6,
   padding: 1.25rem 1.5rem !important;
   margin: 1rem 0 !important;
   border-radius: 0 !important;
-  text-align: center !important;
+  text-align: left !important;
 }
 
 .activity-box h4 {
@@ -457,7 +457,7 @@ h6,
   margin-bottom: 0.75rem !important;
   font-size: 1.1rem !important;
   color: var(--text) !important;
-  text-align: center !important;
+  text-align: left !important;
   border-bottom: 1px solid var(--border) !important;
   padding-bottom: 0.5rem !important;
 }
@@ -465,16 +465,14 @@ h6,
 .activity-box p {
   margin: 0.5rem 0 !important;
   color: var(--muted) !important;
-  text-align: center !important;
+  text-align: left !important;
 }
 
 .activity-box ul,
 .activity-box ol {
-  margin: 0.75rem auto !important;
-  padding-left: 0 !important;
-  list-style-position: inside !important;
-  text-align: center !important;
-  display: inline-block !important;
+  margin: 0.75rem 0 !important;
+  padding-left: 1.5rem !important;
+  list-style-position: outside !important;
   text-align: left !important;
 }
 
@@ -488,7 +486,7 @@ h6,
   margin-top: 1rem !important;
   padding-top: 1rem !important;
   border-top: 1px solid var(--border) !important;
-  text-align: center !important;
+  text-align: left !important;
 }
 
 .category-rules-title {
@@ -496,15 +494,13 @@ h6,
   color: var(--text) !important;
   margin-bottom: 0.5rem !important;
   font-size: 0.95rem !important;
-  text-align: center !important;
+  text-align: left !important;
 }
 
 .activity-box .category-rules ul {
-  margin: 0.75rem auto !important;
-  padding-left: 0 !important;
-  list-style-position: inside !important;
-  text-align: center !important;
-  display: inline-block !important;
+  margin: 0.75rem 0 !important;
+  padding-left: 1.5rem !important;
+  list-style-position: outside !important;
   text-align: left !important;
 }
 
@@ -525,27 +521,25 @@ h6,
   border-left: 1px solid var(--border) !important;
   padding: 1rem 1.25rem !important;
   margin: 1.5rem 0 !important;
-  text-align: center !important;
+  text-align: left !important;
 }
 
 .threshold-box strong {
   color: var(--text) !important;
   display: block !important;
   margin-bottom: 0.5rem !important;
-  text-align: center !important;
+  text-align: left !important;
 }
 
 .threshold-box ul {
-  margin: 0.75rem auto !important;
-  padding-left: 0 !important;
-  list-style-position: inside !important;
-  text-align: center !important;
-  display: inline-block !important;
+  margin: 0.75rem 0 !important;
+  padding-left: 1.5rem !important;
+  list-style-position: outside !important;
   text-align: left !important;
 }
 
 .threshold-box p {
-  text-align: center !important;
+  text-align: left !important;
 }
 
 /* Caixa para pool distribution */
@@ -559,7 +553,7 @@ h6,
   padding: 1.25rem 1.5rem !important;
   margin: 1rem 0 !important;
   border-radius: 0 !important;
-  text-align: center !important;
+  text-align: left !important;
 }
 
 .category-box h3 {
@@ -567,22 +561,20 @@ h6,
   margin-bottom: 0.75rem !important;
   font-size: 1.3rem !important;
   color: var(--text) !important;
-  text-align: center !important;
+  text-align: left !important;
 }
 
 .category-box ul {
-  margin: 0.75rem auto !important;
-  padding-left: 0 !important;
-  list-style-position: inside !important;
-  text-align: center !important;
-  display: inline-block !important;
+  margin: 0.75rem 0 !important;
+  padding-left: 1.5rem !important;
+  list-style-position: outside !important;
   text-align: left !important;
 }
 
 .category-box p {
   margin: 0.5rem 0 !important;
   color: var(--muted) !important;
-  text-align: center !important;
+  text-align: left !important;
 }
 
 /* Paginação Docsify - Botões Anterior/Próximo no footer */
