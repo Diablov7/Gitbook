@@ -404,6 +404,187 @@ h6,
   }
 }
 
+/* Header da categoria com pontos máximos (fora das caixas) */
+.category-header {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  margin-bottom: 1.5rem !important;
+  padding: 1rem 1.5rem !important;
+  background: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+  border-top: 1px solid var(--border) !important;
+  border-right: 1px solid var(--border) !important;
+  border-bottom: 1px solid var(--border) !important;
+  border-left: 1px solid var(--border) !important;
+  text-align: center !important;
+  gap: 0.5rem !important;
+}
+
+.category-header h3 {
+  margin: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+  text-align: center !important;
+  font-size: 1.3rem !important;
+  color: var(--text) !important;
+}
+
+.category-meta {
+  font-size: 0.85rem !important;
+  color: var(--muted) !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+}
+
+/* Caixa individual para cada atividade */
+.activity-box {
+  background: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+  border-top: 1px solid var(--border) !important;
+  border-right: 1px solid var(--border) !important;
+  border-bottom: 1px solid var(--border) !important;
+  border-left: 1px solid var(--border) !important;
+  padding: 1.25rem 1.5rem !important;
+  margin: 1rem 0 !important;
+  border-radius: 0 !important;
+  text-align: center !important;
+}
+
+.activity-box h4 {
+  margin-top: 0 !important;
+  margin-bottom: 0.75rem !important;
+  font-size: 1.1rem !important;
+  color: var(--text) !important;
+  text-align: center !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.activity-box p {
+  margin: 0.5rem 0 !important;
+  color: var(--muted) !important;
+  text-align: center !important;
+}
+
+.activity-box ul,
+.activity-box ol {
+  margin: 0.75rem auto !important;
+  padding-left: 0 !important;
+  list-style-position: inside !important;
+  text-align: center !important;
+  display: inline-block !important;
+  text-align: left !important;
+}
+
+.activity-box li {
+  margin: 0.4rem 0 !important;
+  color: var(--text) !important;
+}
+
+/* Seção de regras dentro da caixa de atividade */
+.activity-box .category-rules {
+  margin-top: 1rem !important;
+  padding-top: 1rem !important;
+  border-top: 1px solid var(--border) !important;
+  text-align: center !important;
+}
+
+.category-rules-title {
+  font-weight: 600 !important;
+  color: var(--text) !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 0.95rem !important;
+  text-align: center !important;
+}
+
+.activity-box .category-rules ul {
+  margin: 0.75rem auto !important;
+  padding-left: 0 !important;
+  list-style-position: inside !important;
+  text-align: center !important;
+  display: inline-block !important;
+  text-align: left !important;
+}
+
+/* Pontuação destacada */
+.points-value {
+  color: var(--text) !important;
+  font-weight: 700 !important;
+  font-size: 1.05em !important;
+}
+
+/* Seção de threshold */
+.threshold-box {
+  background: var(--panel-2) !important;
+  border: 1px solid var(--border) !important;
+  border-top: 1px solid var(--border) !important;
+  border-right: 1px solid var(--border) !important;
+  border-bottom: 1px solid var(--border) !important;
+  border-left: 1px solid var(--border) !important;
+  padding: 1rem 1.25rem !important;
+  margin: 1.5rem 0 !important;
+  text-align: center !important;
+}
+
+.threshold-box strong {
+  color: var(--text) !important;
+  display: block !important;
+  margin-bottom: 0.5rem !important;
+  text-align: center !important;
+}
+
+.threshold-box ul {
+  margin: 0.75rem auto !important;
+  padding-left: 0 !important;
+  list-style-position: inside !important;
+  text-align: center !important;
+  display: inline-block !important;
+  text-align: left !important;
+}
+
+.threshold-box p {
+  text-align: center !important;
+}
+
+/* Caixa para pool distribution */
+.category-box {
+  background: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+  border-top: 1px solid var(--border) !important;
+  border-right: 1px solid var(--border) !important;
+  border-bottom: 1px solid var(--border) !important;
+  border-left: 1px solid var(--border) !important;
+  padding: 1.25rem 1.5rem !important;
+  margin: 1rem 0 !important;
+  border-radius: 0 !important;
+  text-align: center !important;
+}
+
+.category-box h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.75rem !important;
+  font-size: 1.3rem !important;
+  color: var(--text) !important;
+  text-align: center !important;
+}
+
+.category-box ul {
+  margin: 0.75rem auto !important;
+  padding-left: 0 !important;
+  list-style-position: inside !important;
+  text-align: center !important;
+  display: inline-block !important;
+  text-align: left !important;
+}
+
+.category-box p {
+  margin: 0.5rem 0 !important;
+  color: var(--muted) !important;
+  text-align: center !important;
+}
+
 /* Paginação Docsify - Botões Anterior/Próximo no footer */
 .pagination {
   margin-top: 3rem !important;
