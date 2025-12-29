@@ -363,8 +363,8 @@ body:hover::after {
   color: var(--color-font-main) !important;
   font-family: var(--font-family-secondary) !important;
   font-weight: 600;
-  margin-top: 2em;
-  margin-bottom: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 0.6em;
   line-height: 1.3;
 }
 
@@ -379,7 +379,7 @@ body:hover::after {
 .markdown-section h2 {
   font-size: 2em;
   font-weight: 700;
-  margin-top: 2.5em;
+  margin-top: 1.8em;
 }
 
 .markdown-section h3 {
@@ -412,9 +412,9 @@ body:hover::after {
 .markdown-section p {
   font-family: var(--font-family-main) !important;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.6;
   margin: 0;
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
   color: var(--color-font-main);
 }
 
@@ -424,7 +424,7 @@ body:hover::after {
 
 /* Espaçamento entre parágrafos consecutivos - reduzido */
 .markdown-section p + p {
-  margin-top: 1em;
+  margin-top: 0.8em;
 }
 
 /* Divisores */
@@ -497,7 +497,7 @@ body:hover::after {
   padding-left: 0;
   font-family: var(--font-family-main) !important;
   margin: 0;
-  margin-bottom: 1.5em;
+  margin-bottom: 0.8em;
 }
 
 .markdown-section li {
@@ -679,7 +679,7 @@ input[type="search"]:focus {
   counter-reset: step-counter;
   list-style: none;
   padding-left: 0;
-  margin: 1.5em 0;
+  margin: 1em 0;
   position: relative;
 }
 
@@ -699,7 +699,7 @@ input[type="search"]:focus {
   counter-increment: step-counter;
   position: relative;
   padding-left: 60px;
-  padding-bottom: 1.5em;
+  padding-bottom: 1em;
   margin: 0;
   list-style: none;
   min-height: 40px;
@@ -817,9 +817,9 @@ a:focus {
   border-bottom: none !important;
 }
 
-/* Espaçamento consistente entre seções - reduzido */
+/* Espaçamento consistente entre seções - muito reduzido */
 .markdown-section > * + * {
-  margin-top: 1em;
+  margin-top: 0.6em;
 }
 
 /* Espaçamento após títulos - reduzido */
@@ -829,7 +829,7 @@ a:focus {
 .markdown-section > h4 + *,
 .markdown-section > h5 + *,
 .markdown-section > h6 + * {
-  margin-top: 0.8em;
+  margin-top: 0.6em;
 }
 
 /* Espaçamento após parágrafos seguidos de outros elementos - reduzido */
@@ -839,21 +839,21 @@ a:focus {
 .markdown-section p + h4,
 .markdown-section p + h5,
 .markdown-section p + h6 {
-  margin-top: 1.5em;
+  margin-top: 1.2em;
 }
 
-/* Espaçamento após listas - reduzido */
+/* Espaçamento após listas - muito reduzido */
 .markdown-section ul + p,
 .markdown-section ol + p,
 .markdown-section p + ul,
 .markdown-section p + ol {
-  margin-top: 1em;
+  margin-top: 0.6em;
 }
 
 /* Espaçamento após blockquotes - reduzido */
 .markdown-section blockquote + p,
 .markdown-section p + blockquote {
-  margin-top: 1em;
+  margin-top: 0.8em;
 }
 
 /* Ajustar conteúdo - sem header superior */
