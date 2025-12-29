@@ -59,7 +59,7 @@ Ambassadors are evaluated strictly on criteria relevant to their assigned tier.
 
 ## Ambassador Tiers Overview
 
-1. #### Core Ambassadors
+#### Core Ambassadors
 
 **Why This Tier Exists**
 
@@ -83,7 +83,7 @@ Follower count alone is never sufficient. Quality of audience and authenticity a
 
 Core Ambassadors are not community managers.
 
-2. #### Regional Ambassadors
+#### Regional Ambassadors
 
 **Why This Tier Exists**
 
@@ -105,7 +105,7 @@ High demand regions may justify new onboardings. Low demand regions may not.
 * Coordination of regional initiatives and campaigns
 * Day to day community support
 
-3. #### Rising Ambassadors
+#### Rising Ambassadors
 
 **Why This Tier Exists**
 
