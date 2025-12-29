@@ -65,8 +65,9 @@ Ambassadors are evaluated strictly on criteria relevant to their assigned tier.
 {% step %}
 ### Core Ambassadors
 
-**Why This Tier Exists**\
-To represent Cellframe publicly through trusted individuals with real influence, organic reach, and proven credibility. This tier protects the project’s narrative and reputation in high visibility environments.
+**Why This Tier Exists**
+
+To represent Cellframe publicly through trusted individuals with real influence, organic reach, and proven credibility. This tier protects the project's narrative and reputation in high visibility environments.
 
 **Selection Criteria**
 
@@ -90,7 +91,8 @@ Core Ambassadors are not community managers.
 {% step %}
 ### Regional Ambassadors
 
-**Why This Tier Exists**\
+**Why This Tier Exists**
+
 To transform organic interest into structured, healthy regional growth. This tier exists where local demand justifies dedicated ownership.
 
 **Selection Logic**
@@ -113,7 +115,8 @@ High demand regions may justify new onboardings. Low demand regions may not.
 {% step %}
 ### Rising Ambassadors
 
-**Why This Tier Exists**\
+**Why This Tier Exists**
+
 To create a scalable entry point for new contributors who want to learn, participate, and prove their value over time.
 
 This tier is intentionally open and dynamic. It functions as both an onboarding layer and a filtering mechanism.
@@ -124,7 +127,9 @@ This tier is intentionally open and dynamic. It functions as both an onboarding 
 * Strong interest in learning about Cellframe and the ecosystem
 * Willingness to engage consistently and follow guidance
 
-**Progression Logic** Rising Ambassadors can be promoted based on demonstrated traction, quality, and impact.
+**Progression Logic**
+
+Rising Ambassadors can be promoted based on demonstrated traction, quality, and impact.
 
 Depending on the nature of their contribution, promotions may lead to:
 

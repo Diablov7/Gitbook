@@ -2,7 +2,7 @@
 description: >-
   This section defines the standards of behavior and brand representation
   expected from all Cellframe Ambassadors. All ambassadors are expected to
-  operate with integrity, responsibility, and alignment i
+  operate with integrity, responsibility, and alignment with Cellframe's values.
 ---
 
 # 🫡 Code of Conduct and Brand Guidelines
@@ -124,7 +124,8 @@ No. Participation is voluntary. However, inactive months or missing reports do n
 
 <summary>What happens if I do not submit my monthly report?</summary>
 
-No report means no validation.\
+No report means no validation.
+
 No validation means no reward for that Season.
 
 </details>
@@ -176,6 +177,7 @@ Yes. Participation is voluntary.
 
 The Cellframe Ambassador Program is designed to reward **real contribution**, not symbolic presence.
 
-Those who deliver value grow.\
+Those who deliver value grow.
+
 Those who do not, simply do not progress.
 {% endhint %}

@@ -16,21 +16,21 @@ This module explains:
 * How the Effective Pool works
 * How the 100 point multiplier works
 
-#### Seasons & Evaluation Cycles
+## Seasons & Evaluation Cycles
 
-#### The Cellframe Ambassador Program operates in monthly Seasons.
+The Cellframe Ambassador Program operates in monthly Seasons.
 
 > Each Season represents a complete evaluation cycle, including activity execution, performance measurement, scoring, and reward distribution.
 >
 > Points, leaderboards, and eligibility reset at the beginning of every Season.
 
-#### Threshold Progression by Season
+### Threshold Progression by Season
 
 > During the first two Seasons, a reduced eligibility threshold of 30 points may be applied to support onboarding and adaptation.
 >
 > From Season 3 onward, the standard eligibility threshold of 40 points applies.
 
-#### Why Seasons Matter
+### Why Seasons Matter
 
 > Treating each month as a Season reinforces performance based participation. Rewards are earned per Season, not accumulated by tenure.
 
@@ -97,7 +97,8 @@ Core Ambassadors are compensated under individual agreements and do not particip
 
 ## Regional Ambassadors - Scoring Breakdown (Monthly)
 
-**Maximum: 100 points**\
+**Maximum: 100 points**
+
 **Payment eligibility threshold: 40 points**
 
 ### Community Growth (Quality Based) - up to 30 points
@@ -131,7 +132,7 @@ Points are capped and assigned manually
 Evaluated qualitatively based on:
 
 * Presence and responsiveness
-* Engajament quality and quantity
+* Engagement quality and quantity
 * Helpfulness to users
 
 Tracked automatically via Telegram Bot and measured monthly&#x20;
@@ -159,7 +160,8 @@ Rules:
 
 ## Rising Ambassadors - Scoring Breakdown
 
-**Maximum: 100 points**\
+**Maximum: 100 points**
+
 **Payment eligibility threshold: 40 points**
 
 {% stepper %}
