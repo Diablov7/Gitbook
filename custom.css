@@ -101,7 +101,8 @@ a:focus {
 .sidebar .app-name-link {
   color: var(--text) !important;
   font-weight: 700 !important;
-  font-size: 0.95em !important;
+  font-size: 1.05em !important;
+  line-height: 1.2 !important;
 }
 
 .sidebar a,
@@ -116,22 +117,23 @@ a:focus {
   align-items: center;
   gap: 0.75em;
   padding: 0.5em 0;
+  white-space: normal;
 }
 
 .sidebar .app-name-link::before {
   content: '';
   display: inline-block;
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   flex-shrink: 0;
-  background-image: url('assets/images/logo.svg'), url('assets/images/logo.png');
+  background-image: url('assets/images/logo.png');
 }
 
-/* Se logo não existir, ocultar o ::before */
-.sidebar .app-name-link::before {
+/* Sem hover/efeitos no logo do título (evitar clipping) */
+.sidebar .app-name-link:hover::before {
   opacity: 1;
 }
 
@@ -350,6 +352,18 @@ h6,
   box-shadow: none !important;
   overflow: visible !important;
   transform: none !important;
+}
+
+/* Logo “estratégico” no footer */
+.next-section-content::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  background-image: url('assets/images/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.9;
 }
 
 .next-section-button {
