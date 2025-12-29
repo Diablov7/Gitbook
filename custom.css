@@ -1140,39 +1140,16 @@ body {
     0 0 0 1px rgba(183, 148, 246, 0.1) inset,
     0 0 40px rgba(183, 148, 246, 0.05);
   position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
+  overflow: visible;
+  transform: none !important;
 }
 
 .next-section-content::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(183, 148, 246, 0) 0%, transparent 70%);
-  pointer-events: none;
-  transition: all 0.5s ease;
-  opacity: 0;
-}
-
-.next-section-content:hover::before {
-  background: radial-gradient(circle, rgba(183, 148, 246, 0.15) 0%, transparent 70%);
-  opacity: 1;
-  transform: scale(1.1);
+  display: none;
 }
 
 .next-section-content:hover {
-  box-shadow: 
-    0 12px 40px 0 rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(183, 148, 246, 0.3) inset,
-    0 0 80px rgba(183, 148, 246, 0.2);
-  transform: translateY(-2px);
-  border-top: 1px solid rgba(183, 148, 246, 0.3) !important;
-  border-right: 1px solid rgba(183, 148, 246, 0.3) !important;
-  border-bottom: 1px solid rgba(183, 148, 246, 0.3) !important;
-  border-left: 1px solid rgba(183, 148, 246, 0.3) !important;
+  transform: none !important;
 }
 
 .next-section-label {
@@ -1194,28 +1171,13 @@ body {
   font-weight: 600;
   font-size: 1em;
   border-radius: 0;
-  transition: var(--transition-all-main);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   border: 1px solid var(--color-accent-main) !important;
   border-top: 1px solid var(--color-accent-main) !important;
   border-right: 1px solid var(--color-accent-main) !important;
   border-bottom: 1px solid var(--color-accent-main) !important;
   border-left: 1px solid var(--color-accent-main) !important;
-}
-
-.next-section-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(179, 163, 255, 0.3);
-  background: var(--color-accent-main);
-  border-top: 1px solid var(--color-accent-secondary) !important;
-  border-right: 1px solid var(--color-accent-secondary) !important;
-  border-bottom: 1px solid var(--color-accent-secondary) !important;
-  border-left: 1px solid var(--color-accent-secondary) !important;
-  color: var(--color-dark) !important;
-}
-
-.next-section-button:active {
-  transform: translateY(0);
+  transform: none !important;
 }
 
 .next-section-button:focus {
