@@ -27,15 +27,28 @@
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
-/* Body com fundo preto e imagem de fundo */
+/* Body com gradiente escuro moderno */
 body {
-  background: #000000 !important;
-  background-image: url('assets/images/background.jpg');
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #1a1a1a 50%, #0f0f0f 75%, #000000 100%) !important;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(183, 148, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(183, 148, 246, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(183, 148, 246, 0.04) 0%, transparent 50%),
+    url('assets/images/background.jpg');
+  background-size: 
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    cover;
+  background-position: 
+    center,
+    center,
+    center,
+    center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   min-height: 100vh;
+  position: relative;
 }
 
 /* Overlay escuro para melhorar legibilidade */
@@ -46,18 +59,60 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(10, 10, 10, 0.6) 50%, rgba(0, 0, 0, 0.7) 100%);
   z-index: -1;
   pointer-events: none;
 }
 
-/* Sidebar com glassmorphism */
+/* Elementos decorativos flutuantes */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(183, 148, 246, 0.08) 0%, transparent 30%),
+    radial-gradient(circle at 90% 70%, rgba(183, 148, 246, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(183, 148, 246, 0.04) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+/* Sidebar com glassmorphism moderno */
 .sidebar {
-  background: rgba(0, 0, 0, 0.3) !important;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(10, 10, 10, 0.3) 100%) !important;
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-right: 1px solid var(--glass-border) !important;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  box-shadow: 
+    4px 0 20px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(183, 148, 246, 0.05) inset;
+  position: relative;
+}
+
+.sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--purple-light-rgba), transparent);
+  opacity: 0.3;
 }
 
 .sidebar ul li a {
@@ -114,20 +169,45 @@ body::before {
   text-indent: 0;
 }
 
-/* Conteúdo principal com glassmorphism */
+/* Conteúdo principal com glassmorphism moderno */
 .markdown-section {
   color: var(--text-color-base) !important;
-  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(10, 10, 10, 0.4) 100%);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   padding: 3em;
-  border-radius: 16px;
+  border-radius: 20px;
   border: 1px solid var(--glass-border);
   font-family: 'Montserrat', sans-serif !important;
   max-width: 900px;
   line-height: 1.8;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(183, 148, 246, 0.1) inset,
+    0 0 60px rgba(183, 148, 246, 0.05);
   margin: 2em auto;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.markdown-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--purple-light-rgba), transparent);
+  opacity: 0.5;
+}
+
+.markdown-section:hover {
+  box-shadow: 
+    0 12px 40px 0 rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(183, 148, 246, 0.2) inset,
+    0 0 80px rgba(183, 148, 246, 0.1);
+  transform: translateY(-2px);
 }
 
 /* Títulos com Montserrat */
@@ -550,19 +630,33 @@ button {
   margin-top: 1.5em;
 }
 
-/* Navigation Tabs Header com glassmorphism */
+/* Navigation Tabs Header com glassmorphism moderno */
 .docs-nav-tabs {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(10, 10, 10, 0.4) 100%);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid var(--glass-border);
   z-index: 1000;
   padding: 0;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(183, 148, 246, 0.05) inset;
+  position: relative;
+}
+
+.docs-nav-tabs::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--purple-light-rgba), transparent);
+  opacity: 0.3;
 }
 
 /* Sobrescrever qualquer cor laranja do Docsify */
@@ -599,12 +693,31 @@ button {
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 500;
   font-size: 0.9em;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-bottom: 3px solid transparent;
   position: relative;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   border-radius: 0;
+  overflow: hidden;
+}
+
+.nav-tab::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--purple-light);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.nav-tab:hover::before {
+  width: 80%;
+  opacity: 0.5;
 }
 
 .nav-tab:hover {
@@ -619,6 +732,14 @@ button {
   font-weight: 600;
   background: var(--purple-light-bg);
   backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.nav-tab.active::before {
+  width: 100%;
+  opacity: 1;
+  background: var(--purple-light);
+  box-shadow: 0 0 10px var(--purple-light-rgba);
 }
 
 /* Ajustar conteúdo para não ficar atrás do header */
@@ -684,12 +805,47 @@ body {
   gap: 1em;
   flex-wrap: wrap;
   padding: 1.5em;
-  background: var(--code-background);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(10, 10, 10, 0.4) 100%);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-radius: 16px;
   border: 1px solid var(--glass-border);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(183, 148, 246, 0.1) inset,
+    0 0 40px rgba(183, 148, 246, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.next-section-content::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(183, 148, 246, 0.1) 0%, transparent 70%);
+  animation: rotate 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.next-section-content:hover {
+  box-shadow: 
+    0 12px 40px 0 rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(183, 148, 246, 0.2) inset,
+    0 0 60px rgba(183, 148, 246, 0.1);
+  transform: translateY(-2px);
 }
 
 .next-section-label {
