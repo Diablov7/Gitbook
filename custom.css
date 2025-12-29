@@ -1,137 +1,160 @@
+/*
+  custom.css (limpo e determinístico)
+
+  Requisitos que você cobrou:
+  - Fundo roxo removido: nenhum background roxo em lugar nenhum
+  - Listas <ol>: numeração nativa 1, 2, 3... (sem counters e sem círculos)
+  - Espaçamento compacto entre parágrafos
+  - Botões/caixas do footer com borda nos 4 lados
+  - Sem bordas arredondadas
+  - Sem sublinhado (ABNT)
+*/
+
 :root {
-  /* Cellframe Brand Colors */
-  --color-main: #151515;
-  --color-main-light: #1E1E1E;
-  --color-secondary: #222222;
-  --color-secondary-lighter: #292631;
-  --color-tertiary: #363636;
-  --color-tertiary-transparent: rgba(54, 54, 54, 0.32);
-  --color-tertiary-light: #4D4D4D;
-  --color-dark: #000000;
-  --color-neutral-dark: #191919;
-  
-  /* Cellframe Accent Colors - REMOVIDOS ROXOS */
-  --color-accent-main: #4D4D4D; /* Era roxo, agora cinza */
-  --color-accent-main-rgba: rgba(77, 77, 77, 0.24); /* Era roxo, agora cinza */
-  --color-accent-secondary: #666666; /* Era roxo claro, agora cinza mais claro */
-  --color-accent-tertiary: #353144;
-  
-  /* Cellframe Font Colors */
-  --color-font-main: #FFFFFF;
-  --color-font-secondary: #CFCFCF;
-  
-  /* Cellframe Font Families */
-  --font-family-main: "Inter", sans-serif;
-  --font-family-secondary: "Rubik", sans-serif;
-  
-  /* Legacy variables for compatibility */
-  --base-background-color: var(--color-main);
-  --sidebar-background: var(--color-secondary);
-  --sidebar-text-color: var(--color-font-main);
-  --sidebar-border-color: var(--color-tertiary-transparent);
-  --text-color-base: var(--color-font-main);
-  --heading-color: var(--color-font-main);
-  --link-color: #FFFFFF; /* Link branco */
-  --link-hover-color: #CCCCCC; /* Hover cinza */
-  --code-background: var(--color-secondary);
-  --code-border: var(--color-tertiary-transparent);
-  --blockquote-border: var(--color-tertiary-light);
-  --blockquote-background: var(--color-secondary);
-  --table-border: var(--color-tertiary-transparent);
-  --table-header-background: var(--color-secondary);
-  --scrollbar-thumb: var(--color-tertiary);
-  --scrollbar-track: var(--color-main);
-  --glass-bg: var(--color-secondary);
-  --glass-border: var(--color-tertiary-transparent);
-  --purple-light: var(--color-tertiary);
-  --purple-light-rgba: var(--color-tertiary-transparent);
-  --purple-light-bg: var(--color-tertiary-transparent);
-  
-  /* Transitions */
-  --transition-all-main: all ease-out 0.25s;
+  --bg: #151515;
+  --panel: #222222;
+  --panel-2: #1e1e1e;
+  --border: rgba(255, 255, 255, 0.16);
+  --text: #ffffff;
+  --muted: #cfcfcf;
+
+  --font-main: "Inter", sans-serif;
+  --font-heading: "Rubik", sans-serif;
 }
 
-/* ==========================================================================
-   RESET E FUNDOS - REMOÇÃO TOTAL DE ROXO
-   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-radius: 0 !important;
+}
 
-html, body {
-  background: var(--color-main) !important;
-  background-color: var(--color-main) !important;
+/* Fundo único (sem imagens/overlays) */
+html,
+body {
+  background: var(--bg) !important;
+  background-color: var(--bg) !important;
   background-image: none !important;
-  color: var(--color-font-main) !important;
 }
 
-/* Forçar transparência em tudo para ver o fundo do body */
-#app, .app-nav, .app-body, .markdown-section, main, section, article, .content {
+body::before,
+body::after,
+#app::before,
+#app::after,
+.content::before,
+.content::after,
+section.content::before,
+section.content::after,
+.markdown-section::before,
+.markdown-section::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Remover “segundo fundo” do Docsify */
+#app,
+main,
+.content,
+.section,
+.section.content,
+.app-body,
+.markdown-body,
+.docsify-pagination-container,
+article,
+section {
   background: transparent !important;
   background-color: transparent !important;
   background-image: none !important;
   box-shadow: none !important;
 }
 
-/* Remover pseudo-elementos que podem ter gradientes ou cores */
-body::before, body::after, 
-.content::before, .content::after,
-section::before, section::after {
-  display: none !important;
-  content: none !important;
-  background: none !important;
-  background-image: none !important;
+/* Tipografia base */
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-main) !important;
+  color: var(--text) !important;
 }
 
-/* Remover sombras roxas em qualquer lugar */
-* {
+/* ABNT: sem sublinhado em links */
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: var(--text) !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Sidebar: apenas cinza (sem roxo) */
+.sidebar {
+  background: var(--panel) !important;
+  border-right: 1px solid var(--border) !important;
   box-shadow: none !important;
-  text-shadow: none !important;
 }
 
-/* ==========================================================================
-   TIPOGRAFIA E ESPAÇAMENTOS - REDUÇÃO DRÁSTICA
-   ========================================================================== */
-
-* {
-  font-family: var(--font-family-main) !important;
-  line-height: 1.4 !important; /* Line height global reduzido */
+.sidebar .app-name,
+.sidebar .app-name-link,
+.sidebar a,
+.sidebar ul li a {
+  color: var(--text) !important;
+  font-weight: 700 !important;
 }
 
-h1, h2, h3, h4, h5, h6,
+.sidebar ul li.active > a,
+.sidebar-nav li.active > a,
+.sidebar-nav > ul > li.active > a {
+  background: var(--panel-2) !important;
+  border-left: 2px solid var(--border) !important;
+}
+
+/* Conteúdo principal */
+.markdown-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Títulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .markdown-section h1,
 .markdown-section h2,
 .markdown-section h3,
 .markdown-section h4,
 .markdown-section h5,
 .markdown-section h6 {
-  font-family: var(--font-family-secondary) !important;
-  font-weight: 600;
-  margin-top: 0.5em !important;
-  margin-bottom: 0.2em !important;
-  line-height: 1.1 !important;
-  color: var(--color-font-main) !important;
+  font-family: var(--font-heading) !important;
+  color: var(--text) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
 }
 
+.markdown-section h1 { margin: 0 0 0.5rem 0 !important; font-size: 2.4rem; }
+.markdown-section h2 { margin: 0.9rem 0 0.35rem 0 !important; font-size: 1.9rem; }
+.markdown-section h3 { margin: 0.75rem 0 0.3rem 0 !important; font-size: 1.5rem; }
+.markdown-section h4 { margin: 0.6rem 0 0.25rem 0 !important; font-size: 1.2rem; }
+
+/* Parágrafos (compacto) */
 .markdown-section p {
-  margin: 0 !important;
-  margin-bottom: 0.2em !important; /* Espaço mínimo entre parágrafos */
-  padding: 0 !important;
-}
-
-/* Espaçamento entre elementos adjacentes */
-.markdown-section > * + * {
-  margin-top: 0.2em !important;
+  margin: 0 0 0.25rem 0 !important;
+  line-height: 1.45 !important;
+  color: var(--text) !important;
 }
 
 .markdown-section p + p {
-  margin-top: 0.2em !important;
-}
-
-.markdown-section h1 + p,
-.markdown-section h2 + p,
-.markdown-section h3 + p,
-.markdown-section h4 + p,
-.markdown-section h5 + p,
-.markdown-section h6 + p {
-  margin-top: 0.2em !important;
+  margin-top: 0.25rem !important;
 }
 
 .markdown-section p + h1,
@@ -140,191 +163,125 @@ h1, h2, h3, h4, h5, h6,
 .markdown-section p + h4,
 .markdown-section p + h5,
 .markdown-section p + h6 {
-  margin-top: 0.5em !important;
+  margin-top: 0.5rem !important;
 }
 
-/* ==========================================================================
-   LISTAS - CORREÇÃO DE NUMERAÇÃO (1, 2, 3...)
-   ========================================================================== */
-
-/* Reset total para listas ordenadas */
-ol, .markdown-section ol {
+/* Listas: numeração NATIVA (1,2,3...) - sem counters/círculos */
+.markdown-section ol {
   list-style: decimal !important;
   list-style-type: decimal !important;
-  padding-left: 1.5em !important;
-  margin: 0.2em 0 !important;
-  counter-reset: none !important; /* Importante: impede reset do contador */
+  padding-left: 1.6rem !important;
+  margin: 0.35rem 0 !important;
+  counter-reset: none !important;
 }
 
-/* Reset total para itens de lista */
-ol li, .markdown-section ol li {
+.markdown-section ol > li {
   display: list-item !important;
   list-style: decimal !important;
   list-style-type: decimal !important;
-  list-style-position: outside !important;
-  counter-increment: none !important; /* Deixa o navegador gerenciar */
+  margin: 0.2rem 0 !important;
   padding: 0 !important;
-  margin: 0.1em 0 !important;
-  color: var(--color-font-secondary) !important;
+  counter-increment: none !important;
 }
 
-/* Remover qualquer customização anterior (círculos, linhas, etc) */
-ol li::before, ol li::after,
-.markdown-section ol li::before, .markdown-section ol li::after,
-ol::before, ol::after {
-  content: none !important;
+.markdown-section ol > li::before,
+.markdown-section ol > li::after,
+.markdown-section ol li::before,
+.markdown-section ol li::after,
+.markdown-section ol li > p::before,
+.markdown-section ol li > p::after,
+.markdown-section ol::before,
+.markdown-section ol::after {
   display: none !important;
+  content: none !important;
 }
 
-/* Títulos dentro de li */
-.markdown-section li strong,
-.markdown-section li b {
-  color: var(--color-font-main) !important;
-  font-weight: 600 !important;
+/* Garantir que o marcador numérico padrão apareça (1,2,3...) */
+.markdown-section ol > li::marker {
+  color: var(--text) !important;
+  font-weight: 700 !important;
 }
 
-/* ==========================================================================
-   SIDEBAR - ESTILO MONOCROMÁTICO
-   ========================================================================== */
-
-.sidebar {
-  background: var(--color-secondary) !important;
-  border-right: 1px solid var(--color-tertiary-light) !important;
-  width: 280px !important;
+.markdown-section ul {
+  padding-left: 1.6rem !important;
+  margin: 0.35rem 0 !important;
 }
 
-.sidebar ul li a {
-  color: var(--color-font-secondary) !important;
-  font-weight: 500 !important;
-  border: none !important;
-  text-decoration: none !important;
-  padding: 5px 0 5px 10px !important;
-  transition: color 0.2s;
+.markdown-section ul > li {
+  margin: 0.2rem 0 !important;
 }
 
-.sidebar ul li a:hover,
-.sidebar ul li.active > a {
-  color: #FFFFFF !important;
-  font-weight: 600 !important;
-  background: transparent !important; /* Remover fundo roxo no hover/active */
-  border: none !important;
+/* Blockquote / code */
+.markdown-section blockquote {
+  margin: 0.35rem 0 !important;
+  padding: 0.75rem 1rem !important;
+  background: var(--panel) !important;
+  border-left: 3px solid var(--border) !important;
+  color: var(--muted) !important;
 }
 
-/* Remover ícones pseudo-elementos coloridos se houver */
-.sidebar ul li a::before {
-  filter: grayscale(100%) brightness(200%) !important; /* Forçar ícones brancos/cinzas */
+.markdown-section code {
+  background: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+  padding: 0.12rem 0.35rem;
 }
 
-/* ==========================================================================
-   BOTÕES E NAV - CORREÇÃO DE BORDAS E CORES
-   ========================================================================== */
+.markdown-section pre {
+  background: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+  padding: 1rem !important;
+  overflow: auto;
+}
 
-/* Footer "Next Section" */
+/* Footer “Go to next section”: borda nos 4 lados */
 .next-section-footer {
-  margin-top: 2em !important;
-  padding-top: 1em !important;
-  border-top: 1px solid var(--color-tertiary-light) !important;
+  margin-top: 2.5rem !important;
+  padding-top: 1.25rem !important;
+  border-top: 1px solid var(--border) !important;
 }
 
 .next-section-content {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5em;
-}
-
-.next-section-label {
-  color: var(--color-font-secondary) !important;
-  font-size: 0.9em;
-}
-
-/* Botão Próxima Seção - Estilo Sólido com Bordas */
-.next-section-button {
-  display: inline-block !important;
-  background-color: var(--color-secondary) !important;
-  color: #FFFFFF !important;
-  padding: 10px 20px !important;
-  
-  /* BORDAS NOS 4 LADOS */
-  border: 1px solid var(--color-tertiary-light) !important;
-  border-radius: 0 !important; /* Sem bordas arredondadas */
-  
-  text-decoration: none !important;
-  font-weight: 600 !important;
-  transition: all 0.2s !important;
-  transform: none !important; /* Remove animações que cortam bordas */
-  box-sizing: border-box !important;
-}
-
-.next-section-button:hover {
-  background-color: var(--color-tertiary) !important;
-  border-color: #FFFFFF !important;
-  color: #FFFFFF !important;
-}
-
-/* Esconder barra de navegação superior antiga se existir */
-.app-nav {
-  display: none !important;
-}
-
-/* ==========================================================================
-   ELEMENTOS GERAIS
-   ========================================================================== */
-
-a {
-  text-decoration: none !important;
-  border-bottom: none !important;
-}
-
-blockquote {
-  border-left: 3px solid var(--color-tertiary-light) !important;
-  background: var(--color-secondary) !important;
-  margin: 0.5em 0 !important;
-  padding: 0.5em 1em !important;
-  color: var(--color-font-secondary) !important;
-}
-
-code {
-  background: var(--color-secondary) !important;
-  color: #FFFFFF !important;
-  padding: 2px 5px !important;
-  border-radius: 0 !important;
-  font-family: monospace !important;
-  border: 1px solid var(--color-tertiary-light) !important;
-}
-
-table {
-  border-collapse: collapse !important;
-  width: 100% !important;
-  margin: 1em 0 !important;
-}
-
-th, td {
-  border: 1px solid var(--color-tertiary-light) !important;
-  padding: 8px !important;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
   background: transparent !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  transform: none !important;
 }
 
-hr {
-  border: none !important;
-  border-bottom: 1px solid var(--color-tertiary-light) !important;
-  margin: 1em 0 !important;
+.next-section-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  background: var(--panel) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  box-sizing: border-box !important;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
-/* Ajustes Mobile */
+.next-section-button:hover,
+.next-section-content:hover {
+  transform: none !important;
+}
+
 @media (max-width: 768px) {
-  .sidebar {
-    left: -280px;
-    transition: left 0.3s;
+  .markdown-section {
+    padding: 1rem 0.9rem;
   }
-  body.ready .sidebar {
-    left: 0;
-  }
-  .content {
-    padding-left: 0 !important;
+
+  .next-section-button {
+    width: 100%;
   }
 }
+
+
