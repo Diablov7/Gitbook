@@ -731,31 +731,88 @@ input[type="search"]:focus {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Listas numeradas - numeração decimal padrão para TODAS */
-.markdown-section ol {
+/* Listas numeradas - numeração decimal padrão para TODAS - REGRAS AGRESSIVAS */
+.markdown-section ol,
+.markdown-section article ol,
+.markdown-section #main ol,
+article ol,
+#main ol,
+.markdown-section ol:not(.no-timeline),
+.markdown-section ol:not(:has(li h4)),
+.markdown-section ol:has(li h4) {
   list-style: decimal !important;
+  list-style-type: decimal !important;
   padding-left: 2em !important;
   margin: 0.3em 0 !important;
   counter-reset: none !important;
+  position: relative !important;
 }
 
-.markdown-section ol li {
+.markdown-section ol li,
+.markdown-section article ol li,
+.markdown-section #main ol li,
+article ol li,
+#main ol li,
+.markdown-section ol:not(.no-timeline) li,
+.markdown-section ol:not(:has(li h4)) li,
+.markdown-section ol:has(li h4) li {
   padding-left: 0 !important;
   list-style: decimal !important;
+  list-style-type: decimal !important;
   position: relative !important;
   min-height: auto !important;
   counter-increment: none !important;
   margin: 0.2em 0 !important;
+  display: list-item !important;
 }
 
-.markdown-section ol li::before {
+.markdown-section ol li::before,
+.markdown-section article ol li::before,
+.markdown-section #main ol li::before,
+article ol li::before,
+#main ol li::before,
+.markdown-section ol:not(.no-timeline) li::before,
+.markdown-section ol:not(:has(li h4)) li::before,
+.markdown-section ol:has(li h4) li::before {
   display: none !important;
   content: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-.markdown-section ol li::after {
+.markdown-section ol li::after,
+.markdown-section article ol li::after,
+.markdown-section #main ol li::after,
+article ol li::after,
+#main ol li::after,
+.markdown-section ol:not(.no-timeline) li::after,
+.markdown-section ol:not(:has(li h4)) li::after,
+.markdown-section ol:has(li h4) li::after {
   display: none !important;
   content: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.markdown-section ol::before,
+.markdown-section article ol::before,
+.markdown-section #main ol::before,
+article ol::before,
+#main ol::before {
+  display: none !important;
+  content: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 /* Listas numeradas simples (sem timeline) - para listas com H4 dentro */
