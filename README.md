@@ -1,5 +1,5 @@
-<div style="text-align: center; margin: 2rem 0 3rem 0;">
-  <img src="assets/images/logo-header.png" alt="Cellframe" style="max-width: 280px; height: auto; display: inline-block;">
+<div style="text-align: center; margin: 0.5rem 0 1rem 0;">
+  <img src="assets/images/logo-header.png" alt="Cellframe" style="max-width: 200px; height: auto; display: inline-block;">
 </div>
 
 # Overview

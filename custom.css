@@ -254,6 +254,34 @@ h6,
 .markdown-section h3 { margin: 0.75rem 0 0.3rem 0 !important; font-size: 1.5rem; }
 .markdown-section h4 { margin: 0.6rem 0 0.25rem 0 !important; font-size: 1.2rem; }
 
+/* Reduzir espaçamento do logo e imagem no README */
+.markdown-section > div:first-child {
+  margin: 0.5rem 0 1rem 0 !important;
+}
+
+.markdown-section > div:first-child img {
+  max-width: 200px !important;
+  height: auto !important;
+}
+
+/* Reduzir espaçamento da figura/imagem */
+.markdown-section figure {
+  margin: 0.5rem 0 0.75rem 0 !important;
+}
+
+.markdown-section figure img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+.markdown-section figure + h1,
+.markdown-section figure + h2,
+.markdown-section figure + h3 {
+  margin-top: 0.5rem !important;
+}
+
 /* Parágrafos (compacto) */
 .markdown-section p {
   margin: 0 0 0.25rem 0 !important;
