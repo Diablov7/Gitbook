@@ -897,7 +897,7 @@ a:focus {
 .markdown-section > h4 + *,
 .markdown-section > h5 + *,
 .markdown-section > h6 + * {
-  margin-top: 0.3em;
+  margin-top: 0.2em;
 }
 
 /* Espaçamento após parágrafos seguidos de outros elementos - MÍNIMO */
