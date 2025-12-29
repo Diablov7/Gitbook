@@ -574,26 +574,7 @@ input[type="search"]:focus {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .markdown-section {
-    padding: 1.5em;
-    background: rgba(0, 0, 0, 0.5);
-    margin: 1em;
-  }
-  
-  .markdown-section h1 {
-    font-size: 2em;
-  }
-  
-  .markdown-section h2 {
-    font-size: 1.5em;
-  }
-  
-  body {
-    background-attachment: scroll;
-  }
-}
+/* Responsividade base - já coberto nas otimizações mobile abaixo */
 
 /* Animações suaves */
 @keyframes fadeIn {
@@ -638,27 +619,6 @@ a:focus {
   border-bottom: none !important;
 }
 
-/* Garantir que o header fique sempre fixo no topo */
-.docs-nav-tabs,
-nav.docs-nav-tabs,
-body > nav {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 1000 !important;
-  transform: none !important;
-  will-change: auto !important;
-}
-
-/* Prevenir que qualquer elemento mova o header */
-body.sticky .docs-nav-tabs,
-body.ready .docs-nav-tabs,
-body[data-page] .docs-nav-tabs {
-  position: fixed !important;
-  top: 0 !important;
-}
-
 /* Espaçamento consistente entre seções */
 .markdown-section > * + * {
   margin-top: 1.5em;
@@ -698,180 +658,9 @@ body[data-page] .docs-nav-tabs {
   margin-top: 1.5em;
 }
 
-/* Navigation Tabs Header com glassmorphism moderno e bordas elegantes */
-.docs-nav-tabs {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(10, 10, 10, 0.4) 100%);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 2px solid var(--glass-border);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  z-index: 1000 !important;
-  padding: 0;
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(183, 148, 246, 0.05) inset,
-    inset 0 -2px 0 rgba(183, 148, 246, 0.1);
-  width: 100%;
-}
-
-.docs-nav-tabs::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(183, 148, 246, 0.2) 50%, 
-    transparent 100%);
-  opacity: 0.5;
-}
-
-.docs-nav-tabs::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    var(--purple-light-rgba) 20%, 
-    var(--purple-light-rgba) 80%, 
-    transparent 100%);
-  opacity: 0.2;
-  box-shadow: 0 0 5px rgba(183, 148, 246, 0.2);
-  transition: all 0.3s ease;
-}
-
-.docs-nav-tabs:hover::after {
-  opacity: 0.6;
-  box-shadow: 0 0 15px rgba(183, 148, 246, 0.4);
-  height: 3px;
-}
-
-/* Sobrescrever qualquer cor laranja do Docsify */
-.docs-nav-tabs a,
-.nav-tab,
-.nav-tab.active,
-.nav-tab:hover,
-.nav-tab:focus {
-  color: var(--sidebar-text-color) !important;
-}
-
-.nav-tab.active,
-.nav-tab.active:hover,
-.nav-tab.active:focus {
-  color: var(--purple-light) !important;
-  border-bottom-color: var(--purple-light-rgba) !important;
-}
-
-.nav-tabs-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-  gap: 0;
-  position: relative;
-  border-left: 1px solid rgba(255, 255, 255, 0.05);
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.nav-tabs-container::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: linear-gradient(180deg, 
-    transparent 0%, 
-    rgba(183, 148, 246, 0.2) 50%, 
-    transparent 100%);
-  opacity: 0.3;
-}
-
-.nav-tabs-container::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: linear-gradient(180deg, 
-    transparent 0%, 
-    rgba(183, 148, 246, 0.2) 50%, 
-    transparent 100%);
-  opacity: 0.3;
-}
-
-.nav-tab {
-  display: inline-block;
-  padding: 1em 1.5em;
-  color: var(--sidebar-text-color);
-  text-decoration: none !important;
-  font-family: 'Montserrat', sans-serif !important;
-  font-weight: 500;
-  font-size: 0.9em;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-bottom: none !important;
-  position: relative;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-radius: 0;
-  overflow: hidden;
-}
-
-.nav-tab::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--purple-light);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateX(-50%);
-  opacity: 0;
-}
-
-.nav-tab:hover::before {
-  width: 80%;
-  opacity: 0.5;
-}
-
-.nav-tab:hover {
-  color: var(--purple-light) !important;
-  background: var(--purple-light-bg);
-  backdrop-filter: blur(10px);
-}
-
-.nav-tab.active {
-  color: var(--purple-light) !important;
-  border-bottom: none !important;
-  font-weight: 600;
-  background: var(--purple-light-bg);
-  backdrop-filter: blur(10px);
-  position: relative;
-}
-
-.nav-tab.active::before {
-  width: 100%;
-  opacity: 1;
-  background: var(--purple-light);
-  box-shadow: 0 0 10px var(--purple-light-rgba);
-}
-
-/* Ajustar conteúdo para não ficar atrás do header */
+/* Ajustar conteúdo - sem header superior */
 body {
-  padding-top: 60px !important;
+  padding-top: 0 !important;
 }
 
 #app {
@@ -886,42 +675,182 @@ body {
   padding-top: 0 !important;
 }
 
-/* Ajustar sidebar para não sobrepor o header */
+/* Ajustar sidebar - sem header superior */
 .sidebar {
-  top: 60px !important;
-  height: calc(100vh - 60px) !important;
+  top: 0 !important;
+  height: 100vh !important;
 }
 
-/* Responsividade para tabs */
+/* Otimização para Mobile - Leitura otimizada */
 @media (max-width: 768px) {
-  .nav-tabs-container {
-    padding: 0 10px;
-    overflow-x: auto;
-    justify-content: flex-start;
-    scrollbar-width: thin;
-  }
-  
-  .nav-tab {
-    padding: 0.8em 1em;
-    font-size: 0.85em;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  
-  body {
-    padding-top: 50px;
-  }
-  
+  /* Sidebar mobile - hamburger menu do Docsify */
   .sidebar {
-    top: 50px !important;
-    height: calc(100vh - 50px) !important;
+    width: 280px !important;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  /* Conteúdo principal mobile */
+  .markdown-section {
+    padding: 1.5em 1em !important;
+    margin: 1em 0.5em !important;
+    border-radius: 12px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  
+  /* Títulos mobile */
+  .markdown-section h1 {
+    font-size: 1.8em !important;
+    margin-top: 0.5em;
+    margin-bottom: 0.8em;
+  }
+  
+  .markdown-section h2 {
+    font-size: 1.5em !important;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+  }
+  
+  .markdown-section h3 {
+    font-size: 1.25em !important;
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+  }
+  
+  .markdown-section h4 {
+    font-size: 1.1em !important;
+  }
+  
+  /* Parágrafos mobile */
+  .markdown-section p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 1.2em;
+  }
+  
+  /* Listas mobile */
+  .markdown-section ul,
+  .markdown-section ol {
+    padding-left: 1.5em;
+    margin-bottom: 1.2em;
+  }
+  
+  .markdown-section li {
+    margin-bottom: 0.6em;
+    line-height: 1.7;
+  }
+  
+  /* Tabelas mobile */
+  .markdown-section table {
+    font-size: 0.9em;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .markdown-section table th,
+  .markdown-section table td {
+    padding: 0.6em 0.8em;
+    min-width: 100px;
+  }
+  
+  /* Código mobile */
+  .markdown-section pre {
+    padding: 1em;
+    font-size: 0.85em;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Blockquotes mobile */
+  .markdown-section blockquote {
+    padding: 1em;
+    margin: 1.2em 0;
+  }
+  
+  /* Imagens mobile */
+  .markdown-section img {
+    border-radius: 8px;
+    margin: 1.2em 0;
+  }
+  
+  /* Footer next section mobile */
+  .next-section-content {
+    padding: 1em !important;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .next-section-button {
+    width: 100%;
+    padding: 0.9em 1.2em;
+    font-size: 0.95em;
+  }
+  
+  /* Sidebar toggle button mobile */
+  .sidebar-toggle {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 0.6em;
+    color: var(--sidebar-text-color);
+    cursor: pointer;
+  }
+  
+  /* Ajustar body para mobile */
+  body {
+    padding-top: 0 !important;
+    font-size: 16px;
+  }
+  
+  /* Melhorar legibilidade em mobile */
+  .markdown-section {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 
 @media (max-width: 480px) {
-  .nav-tab {
-    padding: 0.7em 0.8em;
-    font-size: 0.75em;
+  /* Mobile pequeno - otimizações adicionais */
+  .markdown-section {
+    padding: 1em 0.8em !important;
+    margin: 0.5em 0.3em !important;
+  }
+  
+  .markdown-section h1 {
+    font-size: 1.6em !important;
+  }
+  
+  .markdown-section h2 {
+    font-size: 1.3em !important;
+  }
+  
+  .markdown-section h3 {
+    font-size: 1.15em !important;
+  }
+  
+  .markdown-section p {
+    font-size: 15px;
+  }
+  
+  .sidebar {
+    width: 260px !important;
+  }
+  
+  .next-section-button {
+    font-size: 0.9em;
+    padding: 0.8em 1em;
   }
 }
 
