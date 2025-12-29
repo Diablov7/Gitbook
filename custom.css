@@ -454,7 +454,7 @@ body::after {
   font-weight: 400;
   line-height: 1.4;
   margin: 0;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.1em;
   color: var(--color-font-main);
 }
 
@@ -900,14 +900,14 @@ a:focus {
   margin-top: 0.3em;
 }
 
-/* Espaçamento após parágrafos seguidos de outros elementos - reduzido */
+/* Espaçamento após parágrafos seguidos de outros elementos - MÍNIMO */
 .markdown-section p + h1,
 .markdown-section p + h2,
 .markdown-section p + h3,
 .markdown-section p + h4,
 .markdown-section p + h5,
 .markdown-section p + h6 {
-  margin-top: 0.6em;
+  margin-top: 0.3em;
 }
 
 /* Espaçamento após listas - MÍNIMO */
