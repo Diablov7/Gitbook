@@ -448,6 +448,7 @@ h6,
   font-weight: 500 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
+  text-align: center !important;
 }
 
 .pagination-item-title {
@@ -476,11 +477,19 @@ h6,
 
 .pagination-item-title,
 .pagination-item-title *,
+.pagination-item-title span,
+.pagination-item-title div,
 .pagination-item--prev .pagination-item-title,
-.pagination-item--next .pagination-item-title {
+.pagination-item--prev .pagination-item-title *,
+.pagination-item--prev .pagination-item-title span,
+.pagination-item--next .pagination-item-title,
+.pagination-item--next .pagination-item-title *,
+.pagination-item--next .pagination-item-title span {
   text-align: center !important;
   justify-content: center !important;
   align-items: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .pagination-item-title:hover {
