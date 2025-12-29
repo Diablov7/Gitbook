@@ -112,6 +112,74 @@ a:focus {
   border-left: 2px solid var(--border) !important;
 }
 
+/* Ícones SVG para sidebar */
+.sidebar ul li a {
+  position: relative;
+  padding-left: 2.5em !important;
+}
+
+/* Overview - Documento */
+.sidebar ul li:nth-child(1) a::before {
+  content: '';
+  position: absolute;
+  left: 1em;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.7;
+}
+
+/* Program Structure - Grid */
+.sidebar ul li:nth-child(2) a::before {
+  content: '';
+  position: absolute;
+  left: 1em;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='7' height='7'/%3E%3Crect x='14' y='3' width='7' height='7'/%3E%3Crect x='14' y='14' width='7' height='7'/%3E%3Crect x='3' y='14' width='7' height='7'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.7;
+}
+
+/* Performance Scoring & Compensation - Gráfico */
+.sidebar ul li:nth-child(3) a::before {
+  content: '';
+  position: absolute;
+  left: 1em;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='22 12 18 12 15 21 9 3 6 12 2 12'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.7;
+}
+
+/* Code of Conduct & Brand - Escudo */
+.sidebar ul li:nth-child(4) a::before {
+  content: '';
+  position: absolute;
+  left: 1em;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.7;
+}
+
+/* Hover e active states para ícones */
+.sidebar ul li a:hover::before,
+.sidebar ul li.active > a::before {
+  opacity: 1;
+}
+
 /* Conteúdo principal */
 .markdown-section {
   max-width: 900px;
