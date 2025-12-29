@@ -51,18 +51,28 @@
   --transition-all-main: all ease-out 0.25s;
 }
 
-/* Garantir que html não tenha background */
+/* Garantir que html tenha apenas fundo cinza */
 html {
   background: var(--color-main) !important;
   background-color: var(--color-main) !important;
+  background-image: none !important;
 }
 
-/* Garantir que elementos do Docsify não tenham fundos extras */
+/* Garantir que TODOS os elementos sejam transparentes exceto body */
+html > *,
+#app,
+.section,
+.section.content,
+.content,
 main,
+section,
+article,
 .app-body,
 .markdown-body,
 .docsify-pagination-container {
   background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
 }
 
 /* Cellframe Typography */
