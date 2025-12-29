@@ -1,57 +1,93 @@
 :root {
-  --base-background-color: #000000;
-  --sidebar-background: rgba(0, 0, 0, 0.3);
-  --sidebar-text-color: #ffffff;
-  --sidebar-border-color: rgba(255, 255, 255, 0.1);
-  --text-color-base: #ffffff;
-  --heading-color: #ffffff;
-  --link-color: #ffffff;
-  --link-hover-color: #ffffff;
-  --code-background: rgba(0, 0, 0, 0.4);
-  --code-border: rgba(255, 255, 255, 0.15);
-  --blockquote-border: rgba(255, 255, 255, 0.3);
-  --blockquote-background: rgba(0, 0, 0, 0.3);
-  --table-border: rgba(255, 255, 255, 0.1);
-  --table-header-background: rgba(0, 0, 0, 0.4);
-  --scrollbar-thumb: rgba(255, 255, 255, 0.2);
-  --scrollbar-track: rgba(0, 0, 0, 0.3);
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --purple-light: #b794f6;
-  --purple-light-rgba: rgba(183, 148, 246, 0.6);
-  --purple-light-bg: rgba(183, 148, 246, 0.1);
+  /* Cellframe Brand Colors */
+  --color-main: #151515;
+  --color-main-light: #1E1E1E;
+  --color-secondary: #222222;
+  --color-secondary-lighter: #292631;
+  --color-tertiary: #363636;
+  --color-tertiary-transparent: rgba(54, 54, 54, 0.32);
+  --color-tertiary-light: #4D4D4D;
+  --color-dark: #000000;
+  --color-neutral-dark: #191919;
+  
+  /* Cellframe Accent Colors */
+  --color-accent-main: #B3A3FF;
+  --color-accent-main-rgba: rgba(179, 163, 255, 0.24);
+  --color-accent-secondary: #CCC2FF;
+  --color-accent-tertiary: #353144;
+  
+  /* Cellframe Font Colors */
+  --color-font-main: #FFFFFF;
+  --color-font-secondary: #CFCFCF;
+  
+  /* Cellframe Font Families */
+  --font-family-main: "Inter", sans-serif;
+  --font-family-secondary: "Rubik", sans-serif;
+  
+  /* Legacy variables for compatibility */
+  --base-background-color: var(--color-main);
+  --sidebar-background: var(--color-secondary);
+  --sidebar-text-color: var(--color-font-main);
+  --sidebar-border-color: var(--color-tertiary-transparent);
+  --text-color-base: var(--color-font-main);
+  --heading-color: var(--color-font-main);
+  --link-color: var(--color-accent-main);
+  --link-hover-color: var(--color-accent-secondary);
+  --code-background: var(--color-secondary);
+  --code-border: var(--color-tertiary-transparent);
+  --blockquote-border: var(--color-accent-main);
+  --blockquote-background: var(--color-secondary);
+  --table-border: var(--color-tertiary-transparent);
+  --table-header-background: var(--color-secondary);
+  --scrollbar-thumb: var(--color-tertiary);
+  --scrollbar-track: var(--color-main);
+  --glass-bg: var(--color-secondary);
+  --glass-border: var(--color-tertiary-transparent);
+  --purple-light: var(--color-accent-main);
+  --purple-light-rgba: var(--color-accent-main-rgba);
+  --purple-light-bg: var(--color-accent-main-rgba);
+  
+  /* Transitions */
+  --transition-all-main: all ease-out 0.25s;
 }
 
-/* Importar Montserrat como fonte principal */
+/* Cellframe Typography */
 * {
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-family: var(--font-family-main) !important;
 }
 
-/* Body com gradiente escuro moderno */
+h1, h2, h3, h4, h5, h6,
+.markdown-section h1,
+.markdown-section h2,
+.markdown-section h3,
+.markdown-section h4,
+.markdown-section h5,
+.markdown-section h6 {
+  font-family: var(--font-family-secondary) !important;
+  font-weight: 600;
+}
+
+/* Body com cores Cellframe */
 body {
-  background: linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #1a1a1a 50%, #0f0f0f 75%, #000000 100%) !important;
+  background: var(--color-main) !important;
   background-image: 
-    radial-gradient(circle at 20% 50%, rgba(183, 148, 246, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(183, 148, 246, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 40% 20%, rgba(183, 148, 246, 0.04) 0%, transparent 50%),
-    url('assets/images/background.jpg');
+    url('assets/images/background.jpg'),
+    url('https://cellframe.net/static/main/img/bg/base-bg_pattern.png');
   background-size: 
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    cover;
+    cover,
+    auto;
   background-position: 
-    center,
-    center,
     center,
     center;
   background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-repeat: 
+    no-repeat,
+    repeat;
   min-height: 100vh;
   position: relative;
 }
 
-/* Overlay escuro para melhorar legibilidade */
+/* Overlay escuro para melhorar legibilidade - Cellframe style */
 body::before {
   content: '';
   position: fixed;
@@ -59,12 +95,13 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(10, 10, 10, 0.6) 50%, rgba(0, 0, 0, 0.7) 100%);
+  background: var(--color-main);
+  opacity: 0.85;
   z-index: -1;
   pointer-events: none;
 }
 
-/* Elementos decorativos - removido animação, apenas visual estático */
+/* Elementos decorativos - Cellframe accent colors */
 body::after {
   content: '';
   position: fixed;
@@ -73,33 +110,33 @@ body::after {
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(183, 148, 246, 0.08) 0%, transparent 30%),
-    radial-gradient(circle at 90% 70%, rgba(183, 148, 246, 0.06) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(183, 148, 246, 0.04) 0%, transparent 50%);
+    radial-gradient(circle at 10% 20%, var(--color-accent-main-rgba) 0%, transparent 30%),
+    radial-gradient(circle at 90% 70%, rgba(179, 163, 255, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(179, 163, 255, 0.08) 0%, transparent 50%);
   z-index: -1;
   pointer-events: none;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+  opacity: 0.4;
+  transition: var(--transition-all-main);
 }
 
 /* Efeito hover no body para ativar elementos decorativos */
 body:hover::after {
-  opacity: 1;
+  opacity: 0.6;
 }
 
-/* Sidebar com glassmorphism moderno e bordas elegantes */
+/* Sidebar com estilo Cellframe */
 .sidebar {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(10, 10, 10, 0.3) 100%) !important;
+  background: var(--color-secondary) !important;
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-right: 2px solid var(--glass-border) !important;
+  border-right: 2px solid var(--color-tertiary-transparent) !important;
   box-shadow: 
     4px 0 20px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(183, 148, 246, 0.05) inset,
-    inset -2px 0 0 rgba(183, 148, 246, 0.1);
+    0 0 0 1px var(--color-accent-main-rgba) inset,
+    inset -2px 0 0 var(--color-accent-main-rgba);
   position: relative;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--color-tertiary-transparent);
+  border-bottom: 1px solid var(--color-tertiary-transparent);
 }
 
 .sidebar::before {
@@ -111,17 +148,17 @@ body:hover::after {
   height: 100%;
   background: linear-gradient(180deg, 
     transparent 0%, 
-    var(--purple-light-rgba) 20%, 
-    var(--purple-light-rgba) 80%, 
+    var(--color-accent-main-rgba) 20%, 
+    var(--color-accent-main-rgba) 80%, 
     transparent 100%);
-  opacity: 0.2;
-  box-shadow: 0 0 5px rgba(183, 148, 246, 0.2);
-  transition: all 0.3s ease;
+  opacity: 0.3;
+  box-shadow: 0 0 5px var(--color-accent-main-rgba);
+  transition: var(--transition-all-main);
 }
 
 .sidebar:hover::before {
   opacity: 0.6;
-  box-shadow: 0 0 15px rgba(183, 148, 246, 0.4);
+  box-shadow: 0 0 15px var(--color-accent-main-rgba);
   width: 3px;
 }
 
@@ -220,33 +257,35 @@ body:hover::after {
 }
 
 .sidebar ul li.active > a::before {
-  filter: brightness(0) saturate(100%) invert(75%) sepia(50%) saturate(500%) hue-rotate(240deg);
+  filter: brightness(0) saturate(100%) invert(70%) sepia(50%) saturate(500%) hue-rotate(230deg);
+  opacity: 1;
 }
 
 .sidebar ul li a:hover {
-  color: var(--link-color) !important;
-  background: var(--glass-bg);
+  color: var(--color-accent-main) !important;
+  background: var(--color-secondary-lighter);
   backdrop-filter: blur(10px);
   transform: translateX(4px);
+  transition: var(--transition-all-main);
 }
 
 .sidebar ul li.active > a {
-  color: var(--purple-light) !important;
-  font-weight: 700 !important;
-  background: var(--purple-light-bg);
+  color: var(--color-accent-main) !important;
+  font-weight: 600 !important;
+  background: var(--color-accent-main-rgba);
   backdrop-filter: blur(10px);
-  border-left: 2px solid var(--purple-light-rgba);
+  border-left: 2px solid var(--color-accent-main);
 }
 
-/* Título principal da sidebar em negrito */
+/* Título principal da sidebar - Cellframe style */
 .sidebar h1,
 .sidebar h1 a,
 .sidebar .app-name,
 .sidebar .app-name-link,
 .sidebar .app-name-link a {
-  font-weight: 700 !important;
-  font-family: 'Montserrat', sans-serif !important;
-  color: var(--heading-color) !important;
+  font-weight: 600 !important;
+  font-family: var(--font-family-secondary) !important;
+  color: var(--color-font-main) !important;
   font-size: 1.1em !important;
 }
 
@@ -265,26 +304,26 @@ body:hover::after {
   text-indent: 0;
 }
 
-/* Conteúdo principal com glassmorphism moderno */
+/* Conteúdo principal - Cellframe style */
 .markdown-section {
-  color: var(--text-color-base) !important;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(10, 10, 10, 0.4) 100%);
+  color: var(--color-font-main) !important;
+  background: var(--color-secondary) !important;
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   padding: 3em;
   border-radius: 0;
-  border: 1px solid var(--glass-border);
-  font-family: 'Montserrat', sans-serif !important;
+  border: 1px solid var(--color-tertiary-transparent);
+  font-family: var(--font-family-main) !important;
   max-width: 900px;
   line-height: 1.8;
   box-shadow: 
     0 8px 32px 0 rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(183, 148, 246, 0.1) inset,
-    0 0 60px rgba(183, 148, 246, 0.05);
+    0 0 0 1px var(--color-accent-main-rgba) inset,
+    0 0 60px rgba(179, 163, 255, 0.05);
   margin: 2em auto;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: var(--transition-all-main);
 }
 
 .markdown-section::before {
@@ -294,36 +333,36 @@ body:hover::after {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--purple-light-rgba), transparent);
+  background: linear-gradient(90deg, transparent, var(--color-accent-main-rgba), transparent);
   opacity: 0.3;
-  transition: all 0.3s ease;
+  transition: var(--transition-all-main);
 }
 
 .markdown-section:hover {
   box-shadow: 
     0 12px 40px 0 rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(183, 148, 246, 0.3) inset,
-    0 0 100px rgba(183, 148, 246, 0.15);
+    0 0 0 1px var(--color-accent-main-rgba) inset,
+    0 0 100px rgba(179, 163, 255, 0.15);
   transform: translateY(-2px);
-  border-color: rgba(183, 148, 246, 0.2);
+  border-color: var(--color-accent-main-rgba);
 }
 
 .markdown-section:hover::before {
   opacity: 1;
   height: 3px;
-  box-shadow: 0 0 20px rgba(183, 148, 246, 0.5);
+  box-shadow: 0 0 20px var(--color-accent-main-rgba);
 }
 
-/* Títulos com Montserrat */
+/* Títulos - Cellframe Rubik font */
 .markdown-section h1,
 .markdown-section h2,
 .markdown-section h3,
 .markdown-section h4,
 .markdown-section h5,
 .markdown-section h6 {
-  color: var(--heading-color) !important;
-  font-family: 'Montserrat', sans-serif !important;
-  font-weight: 700;
+  color: var(--color-font-main) !important;
+  font-family: var(--font-family-secondary) !important;
+  font-weight: 600;
   margin-top: 2em;
   margin-bottom: 1em;
   line-height: 1.3;
@@ -353,20 +392,20 @@ body:hover::after {
   font-size: 1.25em;
 }
 
-/* Links - ABNT: sem sublinhado, apenas diferenciação por cor */
+/* Links - Cellframe accent color */
 .markdown-section a {
-  color: var(--link-color) !important;
+  color: var(--color-accent-main) !important;
   text-decoration: none !important;
   border-bottom: none !important;
-  transition: all 0.3s ease;
-  font-family: 'Montserrat', sans-serif !important;
+  transition: var(--transition-all-main);
+  font-family: var(--font-family-main) !important;
 }
 
 .markdown-section a:hover {
-  color: var(--purple-light) !important;
+  color: var(--color-accent-secondary) !important;
   text-decoration: none !important;
   border-bottom: none !important;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 /* Texto geral */
@@ -992,25 +1031,26 @@ body {
   display: inline-flex;
   align-items: center;
   padding: 0.8em 1.5em;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-accent-main-rgba);
   backdrop-filter: blur(10px);
-  color: #ffffff !important;
+  color: var(--color-font-main) !important;
   text-decoration: none !important;
   border-bottom: none !important;
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: var(--font-family-main) !important;
   font-weight: 600;
   font-size: 1em;
   border-radius: 0;
-  transition: all 0.3s ease;
+  transition: var(--transition-all-main);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--color-accent-main);
 }
 
 .next-section-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(179, 163, 255, 0.3);
+  background: var(--color-accent-main);
+  border-color: var(--color-accent-secondary);
+  color: var(--color-dark) !important;
 }
 
 .next-section-button:active {
