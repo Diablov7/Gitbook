@@ -1164,7 +1164,7 @@ body {
   display: inline-flex;
   align-items: center;
   padding: 0.8em 1.5em;
-  background: var(--color-accent-main-rgba);
+  background: var(--color-secondary) !important;
   backdrop-filter: blur(10px);
   color: var(--color-font-main) !important;
   text-decoration: none !important;
@@ -1173,11 +1173,11 @@ body {
   font-size: 1em;
   border-radius: 0;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--color-accent-main) !important;
-  border-top: 1px solid var(--color-accent-main) !important;
-  border-right: 1px solid var(--color-accent-main) !important;
-  border-bottom: 1px solid var(--color-accent-main) !important;
-  border-left: 1px solid var(--color-accent-main) !important;
+  border: 1px solid var(--color-tertiary-transparent) !important;
+  border-top: 1px solid var(--color-tertiary-transparent) !important;
+  border-right: 1px solid var(--color-tertiary-transparent) !important;
+  border-bottom: 1px solid var(--color-tertiary-transparent) !important;
+  border-left: 1px solid var(--color-tertiary-transparent) !important;
   transform: none !important;
 }
 
