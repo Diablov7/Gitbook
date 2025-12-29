@@ -98,11 +98,41 @@ a:focus {
 }
 
 .sidebar .app-name,
-.sidebar .app-name-link,
+.sidebar .app-name-link {
+  color: var(--text) !important;
+  font-weight: 700 !important;
+  font-size: 0.95em !important;
+}
+
 .sidebar a,
 .sidebar ul li a {
   color: var(--text) !important;
   font-weight: 700 !important;
+}
+
+/* Logo no título do sidebar */
+.sidebar .app-name-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  padding: 0.5em 0;
+}
+
+.sidebar .app-name-link::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  background-image: url('assets/images/logo.svg'), url('assets/images/logo.png');
+}
+
+/* Se logo não existir, ocultar o ::before */
+.sidebar .app-name-link::before {
+  opacity: 1;
 }
 
 .sidebar ul li.active > a,
