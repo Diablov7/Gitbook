@@ -432,6 +432,11 @@ body::after {
   margin-top: 1em;
 }
 
+/* SOBRESCREVER h2 quando vem depois de parágrafo - PRIORIDADE MÁXIMA */
+.markdown-section p + h2 {
+  margin-top: 0.2em !important;
+}
+
 /* SOBRESCREVER h2 quando vem depois de parágrafo */
 .markdown-section p + h2 {
   margin-top: 0.2em !important;
