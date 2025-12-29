@@ -738,12 +738,33 @@ input[type="search"]:focus {
 }
 
 /* Timeline/Stepper Style - Listas numeradas com círculos conectados */
-.markdown-section ol:not(.no-timeline):not(:has(li h4)) {
+/* APENAS para listas que têm strong/bold como primeiro elemento do li */
+.markdown-section ol:not(.no-timeline):not(:has(li h4)):has(li > strong:first-child) {
   counter-reset: step-counter;
   list-style: none;
   padding-left: 0;
   margin: 1em 0;
   position: relative;
+}
+
+/* Listas numeradas simples - numeração padrão */
+.markdown-section ol:not(.no-timeline):not(:has(li h4)):not(:has(li > strong:first-child)) {
+  list-style: decimal !important;
+  padding-left: 2em !important;
+  margin: 0.3em 0 !important;
+  counter-reset: none !important;
+}
+
+.markdown-section ol:not(.no-timeline):not(:has(li h4)):not(:has(li > strong:first-child)) li {
+  padding-left: 0 !important;
+  list-style: decimal !important;
+  position: relative !important;
+  min-height: auto !important;
+}
+
+.markdown-section ol:not(.no-timeline):not(:has(li h4)):not(:has(li > strong:first-child)) li::before {
+  display: none !important;
+  content: none !important;
 }
 
 /* Listas numeradas simples (sem timeline) - para listas com H4 dentro */
@@ -817,11 +838,23 @@ input[type="search"]:focus {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-.markdown-section ol li:last-child {
+.markdown-section ol:not(.no-timeline):not(:has(li h4)):has(li > strong:first-child) li:last-child {
   padding-bottom: 0;
 }
 
-.markdown-section ol li:last-child::after {
+.markdown-section ol:not(.no-timeline):not(:has(li h4)):has(li > strong:first-child) li::after {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 40px;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-tertiary);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.markdown-section ol:not(.no-timeline):not(:has(li h4)):has(li > strong:first-child) li:last-child::after {
   display: none;
 }
 
