@@ -51,6 +51,12 @@
   --transition-all-main: all ease-out 0.25s;
 }
 
+/* Garantir que html não tenha background */
+html {
+  background: var(--color-main) !important;
+  background-color: var(--color-main) !important;
+}
+
 /* Cellframe Typography */
 * {
   font-family: var(--font-family-main) !important;
@@ -67,63 +73,23 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 600;
 }
 
-/* Body com cores Cellframe */
+/* Body com apenas fundo cinza */
 body {
   background: var(--color-main) !important;
-  background-image: 
-    url('assets/images/background.jpg'),
-    url('https://cellframe.net/static/main/img/bg/base-bg_pattern.png');
-  background-size: 
-    cover,
-    auto;
-  background-position: 
-    center,
-    center;
-  background-attachment: scroll;
-  background-repeat: 
-    no-repeat,
-    repeat;
+  background-image: none !important;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
-/* Overlay escuro para melhorar legibilidade - Cellframe style */
+/* Remover overlays */
 body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100%;
-  background: var(--color-main);
-  opacity: 0.85;
-  z-index: -1;
-  pointer-events: none;
+  display: none;
 }
 
-/* Elementos decorativos - Cellframe accent colors */
 body::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100%;
-  background-image: 
-    radial-gradient(circle at 10% 20%, var(--color-accent-main-rgba) 0%, transparent 30%),
-    radial-gradient(circle at 90% 70%, rgba(179, 163, 255, 0.12) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(179, 163, 255, 0.08) 0%, transparent 50%);
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.4;
-  transition: var(--transition-all-main);
-}
-
-/* Efeito hover no body para ativar elementos decorativos */
-body:hover::after {
-  opacity: 0.6;
+  display: none;
 }
 
 /* Sidebar com estilo Cellframe */
@@ -881,10 +847,18 @@ body {
 #app {
   margin-top: 0 !important;
   padding-top: 0 !important;
+  background: transparent !important;
 }
 
 /* Garantir que o conteúdo principal não fique escondido */
-.section.content,
+.section.content {
+  background: transparent !important;
+  margin-top: 0 !important;
+  padding-top: 1em !important;
+  position: relative;
+  z-index: 1;
+}
+
 .markdown-section {
   margin-top: 0 !important;
   padding-top: 1em !important;
