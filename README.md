@@ -1,10 +1,3 @@
----
-cover:
-  light: .gitbook/assets/Design sem nome (5).png
-  dark: .gitbook/assets/Design sem nome (5).png
-coverY: 0
----
-
 # 📖 Overview
 
 <figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
