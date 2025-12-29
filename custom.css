@@ -795,7 +795,8 @@ input[type="search"]:focus {
   content: none !important;
 }
 
-.markdown-section ol::before {
+/* Linha vertical conectando os círculos - APENAS para timeline */
+.markdown-section ol:not(.no-timeline):not(:has(li h4)):has(li > strong:first-child)::before {
   content: '';
   position: absolute;
   left: 20px;
@@ -807,7 +808,8 @@ input[type="search"]:focus {
   z-index: 0;
 }
 
-.markdown-section ol li {
+/* Aplicar timeline APENAS em listas com strong como primeiro elemento */
+.markdown-section ol:not(.no-timeline):not(:has(li h4)):has(li > strong:first-child) li {
   counter-increment: step-counter;
   position: relative;
   padding-left: 60px;
@@ -817,7 +819,7 @@ input[type="search"]:focus {
   min-height: 40px;
 }
 
-.markdown-section ol li::before {
+.markdown-section ol:not(.no-timeline):not(:has(li h4)):has(li > strong:first-child) li::before {
   content: counter(step-counter);
   position: absolute;
   left: 0;
