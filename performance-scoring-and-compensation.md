@@ -1,5 +1,7 @@
 # Performance Scoring and Compensation
 
+<figure><img src=".gitbook/assets/Design sem nome (3).png" alt=""><figcaption></figcaption></figure>
+
 ## How Performance Turns Into Rewards
 
 The Cellframe Ambassador Program does not reward presence. It rewards measurable contribution.
@@ -36,23 +38,23 @@ Treating each month as a Season reinforces performance based participation. Rewa
 
 1. **Ambassadors execute activities aligned with their category**
 
-   Ambassadors perform the activities expected for their category throughout the month.
+Ambassadors perform the activities expected for their category throughout the month.
 
 2. **Activities are tracked**
 
-   Tracking is performed via bots, tools, and manual validation.
+Tracking is performed via bots, tools, and manual validation.
 
 3. **Monthly activity report submission**
 
-   A monthly activity report is submitted. No report means no points.
+A monthly activity report is submitted. No report means no points.
 
 4. **Points are assigned**
 
-   Points are assigned per activity category based on the rules for each category.
+Points are assigned per activity category based on the rules for each category.
 
 5. **Eligible ambassadors share the pool**
 
-   Eligible ambassadors share the Effective Pool proportionally based on Weighted_Points.
+Eligible ambassadors share the Effective Pool proportionally based on Weighted_Points.
 
 **No report means no points. No points means no payment.**
 
@@ -223,21 +225,21 @@ Distribution uses Weighted_Points, but the Effective Pool still uses real points
 
 1. **Compute the Effective_Pool**
 
-   Use Average_Performance_Ratio to calculate `Effective_Pool = Monthly_Pool × Average_Performance_Ratio`.
+Use Average_Performance_Ratio to calculate `Effective_Pool = Monthly_Pool × Average_Performance_Ratio`.
 
 2. **Compute Weighted_Points for distribution**
 
-   Apply the Excellence Multiplier to any 100-point performers; others keep their points as-is.
+Apply the Excellence Multiplier to any 100-point performers; others keep their points as-is.
 
 3. **Filter eligible ambassadors**
 
-   Only ambassadors who meet eligibility (points threshold, valid report, verified activity) are included.
+Only ambassadors who meet eligibility (points threshold, valid report, verified activity) are included.
 
 4. **Compute individual payments**
 
-   ```
-   Payment_i = (Weighted_Points_i / Total_Weighted_Points_Eligible) × Effective_Pool
-   ```
+```
+Payment_i = (Weighted_Points_i / Total_Weighted_Points_Eligible) × Effective_Pool
+```
 
 ## Examples
 

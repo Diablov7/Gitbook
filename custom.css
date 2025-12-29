@@ -410,21 +410,21 @@ body:hover::after {
 
 /* Texto geral */
 .markdown-section p {
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: var(--font-family-main) !important;
   font-weight: 400;
-  line-height: 1.8;
+  line-height: 1.7;
   margin: 0;
-  margin-bottom: 1.5em;
-  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1em;
+  color: var(--color-font-main);
 }
 
 .markdown-section p:last-child {
   margin-bottom: 0;
 }
 
-/* Espaçamento entre parágrafos consecutivos */
+/* Espaçamento entre parágrafos consecutivos - reduzido */
 .markdown-section p + p {
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 
 /* Divisores */
@@ -501,8 +501,8 @@ body:hover::after {
 }
 
 .markdown-section li {
-  margin: 0.5em 0;
-  line-height: 1.8;
+  margin: 0.3em 0;
+  line-height: 1.7;
   font-family: var(--font-family-main) !important;
   color: var(--color-font-main);
 }
@@ -679,7 +679,7 @@ input[type="search"]:focus {
   counter-reset: step-counter;
   list-style: none;
   padding-left: 0;
-  margin: 2em 0;
+  margin: 1.5em 0;
   position: relative;
 }
 
@@ -699,7 +699,7 @@ input[type="search"]:focus {
   counter-increment: step-counter;
   position: relative;
   padding-left: 60px;
-  padding-bottom: 2em;
+  padding-bottom: 1.5em;
   margin: 0;
   list-style: none;
   min-height: 40px;
@@ -817,43 +817,43 @@ a:focus {
   border-bottom: none !important;
 }
 
-/* Espaçamento consistente entre seções */
+/* Espaçamento consistente entre seções - reduzido */
 .markdown-section > * + * {
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 
-/* Espaçamento após títulos */
+/* Espaçamento após títulos - reduzido */
 .markdown-section > h1 + *,
 .markdown-section > h2 + *,
 .markdown-section > h3 + *,
 .markdown-section > h4 + *,
 .markdown-section > h5 + *,
 .markdown-section > h6 + * {
-  margin-top: 1em;
+  margin-top: 0.8em;
 }
 
-/* Espaçamento após parágrafos seguidos de outros elementos */
+/* Espaçamento após parágrafos seguidos de outros elementos - reduzido */
 .markdown-section p + h1,
 .markdown-section p + h2,
 .markdown-section p + h3,
 .markdown-section p + h4,
 .markdown-section p + h5,
 .markdown-section p + h6 {
-  margin-top: 2em;
+  margin-top: 1.5em;
 }
 
-/* Espaçamento após listas */
+/* Espaçamento após listas - reduzido */
 .markdown-section ul + p,
 .markdown-section ol + p,
 .markdown-section p + ul,
 .markdown-section p + ol {
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 
-/* Espaçamento após blockquotes */
+/* Espaçamento após blockquotes - reduzido */
 .markdown-section blockquote + p,
 .markdown-section p + blockquote {
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 
 /* Ajustar conteúdo - sem header superior */
