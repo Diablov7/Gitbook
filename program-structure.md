@@ -17,7 +17,7 @@ The tiered model allows Cellframe to:
 
 Each tier exists to solve a specific growth problem within the ecosystem.
 
-***
+---
 
 ## Program Philosophy
 
@@ -27,11 +27,9 @@ Titles are not permanent. Status is not symbolic. Responsibility, access, and re
 
 There are no automatic promotions and no entitlement based on visibility, seniority, or time served. Participation is voluntary. Accountability is mandatory.
 
-{% hint style="info" %}
 Progression is earned through verified results and ongoing, demonstrable value - not tenure or visibility alone.
-{% endhint %}
 
-***
+---
 
 ## General Operating Principles
 
@@ -57,13 +55,13 @@ Each tier has a clearly defined scope to avoid overlap, confusion, and misaligne
 
 Ambassadors are evaluated strictly on criteria relevant to their assigned tier.
 
-***
+---
 
 ## Ambassador Tiers Overview
 
-{% stepper %}
-{% step %}
-### Core Ambassadors
+1
+
+#### Core Ambassadors
 
 **Why This Tier Exists**
 
@@ -74,7 +72,7 @@ To represent Cellframe publicly through trusted individuals with real influence,
 * Proven organic engagement and real audience interaction
 * Verified non botted followers and healthy engagement ratios
 * Relevant reach within specific regions, languages, or sectors
-* Demonstrated alignment with Cellframe’s values and narrative
+* Demonstrated alignment with Cellframe's values and narrative
 
 Follower count alone is never sufficient. Quality of audience and authenticity are mandatory.
 
@@ -86,10 +84,10 @@ Follower count alone is never sufficient. Quality of audience and authenticity a
 * Direct alignment with the core team
 
 Core Ambassadors are not community managers.
-{% endstep %}
 
-{% step %}
-### Regional Ambassadors
+2
+
+#### Regional Ambassadors
 
 **Why This Tier Exists**
 
@@ -110,10 +108,10 @@ High demand regions may justify new onboardings. Low demand regions may not.
 * Localized education and content
 * Coordination of regional initiatives and campaigns
 * Day to day community support
-{% endstep %}
 
-{% step %}
-### Rising Ambassadors
+3
+
+#### Rising Ambassadors
 
 **Why This Tier Exists**
 
@@ -137,39 +135,25 @@ Depending on the nature of their contribution, promotions may lead to:
 * Core Ambassador roles, when influence, reach, and public impact justify it
 
 There is no fixed promotion path. Impact defines direction.
-{% endstep %}
-{% endstepper %}
 
-***
+---
 
 ## Governance & Authority
 
-<details>
-
-<summary>Accountability and Enforcement</summary>
+**Accountability and Enforcement**
 
 Failure to meet minimum standards, submit required reports, or comply with program rules may result in loss of eligibility for compensation, tier downgrade, or removal from the program.
 
 All tiers are subject to review and enforcement.
 
-</details>
-
-<details>
-
-<summary>Program Adjustments</summary>
+**Program Adjustments**
 
 Cellframe reserves the right to modify program rules, metrics, compensation structures, eligibility thresholds, and tier definitions at any time. Adjustments may reflect strategic priorities, budget constraints, regional demand, or abuse prevention.
 
 No role, metric, or reward is guaranteed or permanent.
 
-</details>
-
-<details>
-
-<summary>Final Authority</summary>
+**Final Authority**
 
 All interpretations of program rules, tier definitions, evaluation outcomes, and assignments are made by the Program Lead in coordination with the core team.
 
 These decisions are final and executed in the best interest of the Cellframe ecosystem.
-
-</details>
