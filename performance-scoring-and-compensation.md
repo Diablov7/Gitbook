@@ -204,7 +204,7 @@ The Effective Pool model makes distribution proportional to how much the categor
 
 ### Step 1: Compute the category average performance ratio
 
-For each ambassador:
+For each eligible ambassador (Points_i >= Threshold):
 
 ```
 Performance_Ratio_i = Points_i / 100
@@ -213,8 +213,10 @@ Performance_Ratio_i = Points_i / 100
 Then:
 
 ```
-Average_Performance_Ratio = (Sum of all Performance_Ratio_i) / N
+Average_Performance_Ratio = (Sum of all Performance_Ratio_i for eligible only) / N_eligible
 ```
+
+**Important**: Only eligible ambassadors (those who meet the minimum threshold) are included in this calculation. Non-eligible ambassadors do not affect the Effective Pool.
 
 ### Step 2: Compute the Effective Pool
 
@@ -263,17 +265,17 @@ Distribution uses Weighted_Points, but the Effective Pool still uses real points
 
 ## Payment Formula (Final)
 
-1. **Compute the Effective_Pool**
+1. **Filter eligible ambassadors**
 
-Use Average_Performance_Ratio to calculate `Effective_Pool = Monthly_Pool × Average_Performance_Ratio`.
+Only ambassadors who meet eligibility (points threshold, valid report, verified activity) are considered for the entire payment calculation.
 
-2. **Compute Weighted_Points for distribution**
+2. **Compute the Effective_Pool**
+
+Calculate Average_Performance_Ratio using only eligible ambassadors, then compute `Effective_Pool = Monthly_Pool × Average_Performance_Ratio`.
+
+3. **Compute Weighted_Points for distribution**
 
 Apply the Excellence Multiplier to any 100-point performers; others keep their points as-is.
-
-3. **Filter eligible ambassadors**
-
-Only ambassadors who meet eligibility (points threshold, valid report, verified activity) are included.
 
 4. **Compute individual payments**
 
@@ -282,6 +284,8 @@ Payment_i = (Weighted_Points_i / Total_Weighted_Points_Eligible) × Effective_Po
 ```
 
 ## Examples
+
+**Note**: All examples below show only eligible ambassadors (those meeting the threshold). Non-eligible ambassadors are excluded from all calculations.
 
 ### Example A: 10 Regional Ambassadors, Monthly Pool USD 1,000
 
@@ -391,7 +395,7 @@ This creates a balanced rebase mechanism where strong performance unlocks higher
 
 Ambassadors who fail to meet the minimum eligibility threshold do not receive payments for the month.
 
-Their performance is still included in the category's average performance calculation used to determine how much of the Monthly Pool is unlocked.
+**Their performance is NOT included in the category's average performance calculation.** Only eligible ambassadors are considered when determining how much of the Monthly Pool is unlocked through the Effective Pool calculation. This ensures that non-eligible ambassadors do not reduce the pool available to those who met the threshold.
 
 ## Final Note
 
