@@ -61,7 +61,7 @@ Ambassadors are evaluated strictly on criteria relevant to their assigned tier.
 
 ---
 
-### <u>**Core Ambassadors**</u>
+### <u><span style="color: white;">**Core Ambassadors**</span></u>
 
 **Why This Tier Exists**
 
@@ -91,7 +91,7 @@ Core Ambassadors are not community managers.
 
 ---
 
-### <u>**Regional Ambassadors**</u>
+### <u><span style="color: white;">**Regional Ambassadors**</span></u>
 
 **Why This Tier Exists**
 
@@ -123,7 +123,7 @@ High demand regions may justify new onboardings. Low demand regions may not.
 
 ---
 
-### <u>**Rising Ambassadors**</u>
+### <u><span style="color: white;">**Rising Ambassadors**</span></u>
 
 **Why This Tier Exists**
 
