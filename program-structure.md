@@ -65,6 +65,10 @@ Ambassadors are evaluated strictly on criteria relevant to their assigned tier.
 
 To represent Cellframe publicly through trusted individuals with real influence, organic reach, and proven credibility. This tier protects the project's narrative and reputation in high visibility environments.
 
+**Selection Process**
+
+Core Ambassadors are selected directly by the team from among program applicants. All candidates submitted an application form. The team then extends invitations to individuals who meet the strategic requirements for high-impact public representation based on their demonstrated influence, credibility, and alignment with Cellframe's values.
+
 **Selection Criteria**
 
 * Proven organic engagement and real audience interaction
@@ -89,6 +93,14 @@ Core Ambassadors are not community managers.
 
 To transform organic interest into structured, healthy regional growth. This tier exists where local demand justifies dedicated ownership.
 
+**Selection Process**
+
+Regional Ambassadors are selected by the team based on regional demand. When the team identifies that a community is growing to the point where it requires a local ambassador, candidates are invited to join based on either:
+* Their submitted application form, or
+* Promotion from the Rising Ambassadors tier based on demonstrated performance and regional fit
+
+All candidates have submitted an application form to be considered. Selection is driven by actual need: high-demand regions may justify new onboardings, while low-demand regions may not.
+
 **Selection Logic**
 
 * Onboarding is driven by regional demand and growth signals
@@ -112,6 +124,18 @@ High demand regions may justify new onboardings. Low demand regions may not.
 To create a scalable entry point for new contributors who want to learn, participate, and prove their value over time.
 
 This tier is intentionally open and dynamic. It functions as both an onboarding layer and a filtering mechanism.
+
+**Selection Process**
+
+Rising Ambassadors include all individuals who have applied to the program and are interested in representing the Cellframe ecosystem. This tier includes all applicants who demonstrate genuine interest and commitment to learning about and contributing to Cellframe.
+
+**Compensation**
+
+Rising Ambassadors are fairly compensated according to:
+* The budget allocated by the project
+* The individual candidate's effort and performance
+
+Rewards are distributed through the performance-based scoring system, ensuring that compensation reflects actual contribution and value delivered.
 
 **Profile**
 
